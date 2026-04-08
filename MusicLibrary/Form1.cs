@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MusicLibrary
 {
-    public partial class frmLogin : Form
+    public partial class Form1 : Form
     {
-        public frmLogin()
+        public Form1()
         {
             InitializeComponent();
         }

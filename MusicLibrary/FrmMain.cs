@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MusicLibrary
 {
-    public partial class Menu : Form
+    public partial class FrmMain : Form
     {
-        public Menu()
+        public FrmMain()
         {
             InitializeComponent();
         }

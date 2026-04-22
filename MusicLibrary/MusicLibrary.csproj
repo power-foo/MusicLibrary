@@ -91,6 +91,9 @@
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRegister.resx">
+      <DependentUpon>frmRegister.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmViewPlaylist.resx">
       <DependentUpon>FrmViewPlaylist.cs</DependentUpon>
     </EmbeddedResource>

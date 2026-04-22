@@ -36,6 +36,10 @@ namespace MusicLibrary
             if (controller.Login(myUser))
             {
                 MessageBox.Show("Login successful.");
+                FrmMain menuForm = new FrmMain();
+                this.Hide();
+                menuForm.ShowDialog();
+                this.Show();
             }
             else
             {
@@ -46,6 +50,22 @@ namespace MusicLibrary
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lblRegisterPrompt_Click(object sender, EventArgs e)
+        {
+            frmRegister registerForm = new frmRegister();
+            registerForm.ShowDialog();
+        }
+
+        private void lblRegisterPrompt_MouseEnter(object sender, EventArgs e)
+        {
+            lblRegisterPrompt.ForeColor = Color.DodgerBlue;
+        }
+
+        private void lblRegisterPrompt_MouseLeave(object sender, EventArgs e)
+        {
+            lblRegisterPrompt.ForeColor = Color.Navy;
         }
     }
 }

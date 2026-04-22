@@ -37,6 +37,7 @@
             this.lblLoginUser = new System.Windows.Forms.Label();
             this.lblLoginCaption = new System.Windows.Forms.Label();
             this.lblLoginTitle = new System.Windows.Forms.Label();
+            this.lblHint = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblRegisterPrompt
@@ -44,11 +45,14 @@
             this.lblRegisterPrompt.AutoSize = true;
             this.lblRegisterPrompt.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegisterPrompt.ForeColor = System.Drawing.Color.Navy;
-            this.lblRegisterPrompt.Location = new System.Drawing.Point(120, 260);
+            this.lblRegisterPrompt.Location = new System.Drawing.Point(120, 264);
             this.lblRegisterPrompt.Name = "lblRegisterPrompt";
             this.lblRegisterPrompt.Size = new System.Drawing.Size(330, 20);
             this.lblRegisterPrompt.TabIndex = 17;
             this.lblRegisterPrompt.Text = "Don\'t have an account? Click here to register.";
+            this.lblRegisterPrompt.Click += new System.EventHandler(this.lblRegisterPrompt_Click);
+            this.lblRegisterPrompt.MouseEnter += new System.EventHandler(this.lblRegisterPrompt_MouseEnter);
+            this.lblRegisterPrompt.MouseLeave += new System.EventHandler(this.lblRegisterPrompt_MouseLeave);
             // 
             // btnExit
             // 
@@ -135,11 +139,24 @@
             this.lblLoginTitle.TabIndex = 9;
             this.lblLoginTitle.Text = "Welcome to the Music Player";
             // 
+            // lblHint
+            // 
+            this.lblHint.AutoSize = true;
+            this.lblHint.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHint.ForeColor = System.Drawing.Color.Navy;
+            this.lblHint.Location = new System.Drawing.Point(121, 309);
+            this.lblHint.Name = "lblHint";
+            this.lblHint.Size = new System.Drawing.Size(333, 17);
+            this.lblHint.TabIndex = 18;
+            this.lblHint.Text = "Hint: For easier testing, User=christolis, PW=gobirds";
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(582, 328);
+            this.Controls.Add(this.lblHint);
             this.Controls.Add(this.lblRegisterPrompt);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogin);
@@ -167,6 +184,7 @@
         private System.Windows.Forms.Label lblLoginUser;
         private System.Windows.Forms.Label lblLoginCaption;
         private System.Windows.Forms.Label lblLoginTitle;
+        private System.Windows.Forms.Label lblHint;
     }
 }
 

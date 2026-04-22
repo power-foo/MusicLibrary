@@ -16,5 +16,36 @@ namespace MusicLibrary
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (txtLoginUser.Text == "" || txtLoginPassword.Text == "")
+            {
+                MessageBox.Show("Please enter your Username and Password.");
+                return;
+            }
+
+            User myUser = new User
+            {
+                UserName = txtLoginUser.Text.Trim(),
+                UserPassword = txtLoginPassword.Text.Trim()
+            };
+
+            VerifyUser controller = new VerifyUser();
+
+            if (controller.Login(myUser))
+            {
+                MessageBox.Show("Login successful.");
+            }
+            else
+            {
+                MessageBox.Show("Invalid Username or Password. Try again.");
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

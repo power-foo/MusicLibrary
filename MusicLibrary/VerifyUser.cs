@@ -11,7 +11,7 @@ namespace MusicLibrary
     {
         private String connectionString = "provider=Microsoft.ACE.OLEDB.12.0;Data Source=MusicLibrary.accdb";
 
-        // Method for the log-in
+        // Method for Logging In
         public bool Login(User user)
         {
             using (OleDbConnection conn = new OleDbConnection(connectionString)) 
@@ -31,6 +31,48 @@ namespace MusicLibrary
                         {
                             return reader.Read();
                         }
+                    }
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
+
+        // Method for registering a new User
+        public bool Register(User user)
+        {
+            using (OleDbConnection conn = new OleDbConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+
+                    String checkQuery = "SELECT * FROM Users WHERE UserName = ?";
+
+                    using (OleDbCommand checkCmd = new OleDbCommand(checkQuery, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("@UserName", user.UserName);
+
+                        using (OleDbDataReader reader = checkCmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                return false; // If the User already exists
+                            }
+                        }
+                    }
+
+                    // Adding a new User
+                    String insertQuery = "INSERT INTO Users (UserName, UserPassword) VALUES (?, ?)";
+
+                    using (OleDbCommand insertCmd = new OleDbCommand(insertQuery, conn))
+                    {
+                        insertCmd.Parameters.AddWithValue("@UserName", user.UserName);
+                        insertCmd.Parameters.AddWithValue("@UserPassword", user.UserPassword);
+                        insertCmd.ExecuteNonQuery();
+                        return true;
                     }
                 }
                 catch

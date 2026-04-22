@@ -16,7 +16,7 @@ namespace MusicLibrary
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmViewPlaylist());
+            Application.Run(new FrmMain());
         }
     }
 }

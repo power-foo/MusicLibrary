@@ -58,6 +58,12 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSearchSong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearchSong.Designer.cs">
+      <DependentUpon>frmSearchSong.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmViewPlaylist.cs">
       <SubType>Form</SubType>
     </Compile>

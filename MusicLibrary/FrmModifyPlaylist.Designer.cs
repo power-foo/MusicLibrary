@@ -35,6 +35,7 @@
             this.lblPlaylistName = new System.Windows.Forms.Label();
             this.btnStopPreview = new System.Windows.Forms.Button();
             this.wmpPreview = new AxWMPLib.AxWindowsMediaPlayer();
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.wmpPreview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,6 +50,7 @@
             // btnAddSong
             // 
             this.btnAddSong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnAddSong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddSong.Location = new System.Drawing.Point(166, 420);
             this.btnAddSong.Name = "btnAddSong";
             this.btnAddSong.Size = new System.Drawing.Size(75, 23);
@@ -80,6 +82,7 @@
             // btnStopPreview
             // 
             this.btnStopPreview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnStopPreview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStopPreview.Location = new System.Drawing.Point(506, 418);
             this.btnStopPreview.Name = "btnStopPreview";
             this.btnStopPreview.Size = new System.Drawing.Size(103, 23);
@@ -98,12 +101,25 @@
             this.wmpPreview.TabIndex = 6;
             this.wmpPreview.Visible = false;
             // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Location = new System.Drawing.Point(713, 420);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 8;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // FrmModifyPlaylist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnStopPreview);
             this.Controls.Add(this.wmpPreview);
             this.Controls.Add(this.lblPlaylistName);
@@ -125,5 +141,6 @@
         private System.Windows.Forms.Label lblPlaylistName;
         private AxWMPLib.AxWindowsMediaPlayer wmpPreview;
         private System.Windows.Forms.Button btnStopPreview;
+        private System.Windows.Forms.Button btnBack;
     }
 }

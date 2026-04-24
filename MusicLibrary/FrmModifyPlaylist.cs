@@ -83,11 +83,15 @@ namespace MusicLibrary
                     btnRemove.Text = "Remove";
                     btnRemove.Location = new Point(115, 75);
                     btnRemove.Width = 90;
+                    btnRemove.BackColor = Color.FromArgb(128, 255, 255);
+                    btnRemove.FlatStyle = FlatStyle.Flat;
 
                     Button btnPreview = new Button();
                     btnPreview.Text = "Preview";
                     btnPreview.Location = new Point(210, 75);
                     btnPreview.Width = 90;
+                    btnPreview.BackColor = Color.FromArgb(128, 255, 255);
+                    btnPreview.FlatStyle = FlatStyle.Flat;
 
                     string previewURL = reader["PreviewURL"].ToString();
 
@@ -224,6 +228,11 @@ namespace MusicLibrary
         {
             wmpPreview.Ctlcontrols.stop();
             wmpPreview.URL = "";
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close(); 
         }
     }
 

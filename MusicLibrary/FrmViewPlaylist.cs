@@ -55,6 +55,8 @@ namespace MusicLibrary
                     btnView.Text = "Open";
                     btnView.Location = new Point(10, 50);
                     btnView.Width = 90;
+                    btnView.BackColor = Color.FromArgb(128, 255, 255);
+                    btnView.FlatStyle = FlatStyle.Flat;
 
                     int playlistID = Convert.ToInt32(reader["PlaylistID"]);
 
@@ -70,6 +72,8 @@ namespace MusicLibrary
                     btnDelete.Text = "Delete";
                     btnDelete.Location = new Point(110, 50);
                     btnDelete.Width = 80;
+                    btnDelete.BackColor = Color.FromArgb(128, 255, 255);
+                    btnDelete.FlatStyle = FlatStyle.Flat;
 
                     btnDelete.Click += (s, e) =>
                     {
@@ -160,6 +164,11 @@ namespace MusicLibrary
             {
                 MessageBox.Show("Can not add a playlist");
             }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

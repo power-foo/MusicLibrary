@@ -33,6 +33,8 @@
             this.txtPlaylistName = new System.Windows.Forms.TextBox();
             this.btnAddPlaylist = new System.Windows.Forms.Button();
             this.flpPlaylists = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlaylists)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,14 +60,14 @@
             // 
             // txtPlaylistName
             // 
-            this.txtPlaylistName.Location = new System.Drawing.Point(12, 250);
+            this.txtPlaylistName.Location = new System.Drawing.Point(190, 70);
             this.txtPlaylistName.Name = "txtPlaylistName";
-            this.txtPlaylistName.Size = new System.Drawing.Size(100, 20);
+            this.txtPlaylistName.Size = new System.Drawing.Size(203, 20);
             this.txtPlaylistName.TabIndex = 2;
             // 
             // btnAddPlaylist
             // 
-            this.btnAddPlaylist.Location = new System.Drawing.Point(12, 276);
+            this.btnAddPlaylist.Location = new System.Drawing.Point(399, 70);
             this.btnAddPlaylist.Name = "btnAddPlaylist";
             this.btnAddPlaylist.Size = new System.Drawing.Size(75, 23);
             this.btnAddPlaylist.TabIndex = 3;
@@ -76,16 +78,38 @@
             // flpPlaylists
             // 
             this.flpPlaylists.AutoScroll = true;
-            this.flpPlaylists.Location = new System.Drawing.Point(12, 12);
+            this.flpPlaylists.Location = new System.Drawing.Point(12, 106);
             this.flpPlaylists.Name = "flpPlaylists";
-            this.flpPlaylists.Size = new System.Drawing.Size(776, 232);
+            this.flpPlaylists.Size = new System.Drawing.Size(776, 323);
             this.flpPlaylists.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(203, 39);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "My Playlists";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(16, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(169, 20);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "New / Rename Playlist:";
             // 
             // FrmViewPlaylist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.flpPlaylists);
             this.Controls.Add(this.btnAddPlaylist);
             this.Controls.Add(this.txtPlaylistName);
@@ -106,5 +130,7 @@
         private System.Windows.Forms.TextBox txtPlaylistName;
         private System.Windows.Forms.Button btnAddPlaylist;
         private System.Windows.Forms.FlowLayoutPanel flpPlaylists;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

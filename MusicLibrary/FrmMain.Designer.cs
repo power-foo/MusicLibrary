@@ -29,12 +29,8 @@
         private void InitializeComponent()
         {
             this.btnClose = new System.Windows.Forms.Button();
-            this.btnViewPlaylist = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.lblTitle1 = new System.Windows.Forms.Label();
-            this.btnSearchSongs = new System.Windows.Forms.Button();
-            this.btnModifyPlaylist = new System.Windows.Forms.Button();
-            this.btnRateSongs = new System.Windows.Forms.Button();
             this.lblTitle3 = new System.Windows.Forms.Label();
             this.flpMainButtons = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
@@ -46,20 +42,9 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(133, 26);
             this.btnClose.TabIndex = 0;
-            this.btnClose.Text = "Exit";
+            this.btnClose.Text = "Logout";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnViewPlaylist
-            // 
-            this.btnViewPlaylist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnViewPlaylist.Location = new System.Drawing.Point(779, 25);
-            this.btnViewPlaylist.Name = "btnViewPlaylist";
-            this.btnViewPlaylist.Size = new System.Drawing.Size(190, 77);
-            this.btnViewPlaylist.TabIndex = 1;
-            this.btnViewPlaylist.Text = "View Playlist";
-            this.btnViewPlaylist.UseVisualStyleBackColor = false;
-            this.btnViewPlaylist.Click += new System.EventHandler(this.btnViewPlaylist_Click);
             // 
             // lblWelcome
             // 
@@ -82,38 +67,6 @@
             this.lblTitle1.TabIndex = 3;
             this.lblTitle1.Text = "Music Library";
             // 
-            // btnSearchSongs
-            // 
-            this.btnSearchSongs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnSearchSongs.Location = new System.Drawing.Point(804, 99);
-            this.btnSearchSongs.Name = "btnSearchSongs";
-            this.btnSearchSongs.Size = new System.Drawing.Size(190, 77);
-            this.btnSearchSongs.TabIndex = 4;
-            this.btnSearchSongs.Text = "Search Songs";
-            this.btnSearchSongs.UseVisualStyleBackColor = false;
-            this.btnSearchSongs.Click += new System.EventHandler(this.btnSearchSongs_Click);
-            // 
-            // btnModifyPlaylist
-            // 
-            this.btnModifyPlaylist.Location = new System.Drawing.Point(-17, 540);
-            this.btnModifyPlaylist.Name = "btnModifyPlaylist";
-            this.btnModifyPlaylist.Size = new System.Drawing.Size(190, 77);
-            this.btnModifyPlaylist.TabIndex = 5;
-            this.btnModifyPlaylist.Text = "Modify Playlist";
-            this.btnModifyPlaylist.UseVisualStyleBackColor = true;
-            this.btnModifyPlaylist.Visible = false;
-            // 
-            // btnRateSongs
-            // 
-            this.btnRateSongs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnRateSongs.Location = new System.Drawing.Point(804, 198);
-            this.btnRateSongs.Name = "btnRateSongs";
-            this.btnRateSongs.Size = new System.Drawing.Size(190, 77);
-            this.btnRateSongs.TabIndex = 6;
-            this.btnRateSongs.Text = "Rate Songs";
-            this.btnRateSongs.UseVisualStyleBackColor = false;
-            this.btnRateSongs.Click += new System.EventHandler(this.btnRateSongs_Click);
-            // 
             // lblTitle3
             // 
             this.lblTitle3.AutoSize = true;
@@ -129,9 +82,9 @@
             // 
             this.flpMainButtons.AutoScroll = true;
             this.flpMainButtons.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpMainButtons.Location = new System.Drawing.Point(60, 113);
+            this.flpMainButtons.Location = new System.Drawing.Point(341, 131);
             this.flpMainButtons.Name = "flpMainButtons";
-            this.flpMainButtons.Size = new System.Drawing.Size(709, 403);
+            this.flpMainButtons.Size = new System.Drawing.Size(574, 403);
             this.flpMainButtons.TabIndex = 8;
             this.flpMainButtons.WrapContents = false;
             // 
@@ -143,12 +96,8 @@
             this.ClientSize = new System.Drawing.Size(1006, 591);
             this.Controls.Add(this.flpMainButtons);
             this.Controls.Add(this.lblTitle3);
-            this.Controls.Add(this.btnRateSongs);
-            this.Controls.Add(this.btnModifyPlaylist);
-            this.Controls.Add(this.btnSearchSongs);
             this.Controls.Add(this.lblTitle1);
             this.Controls.Add(this.lblWelcome);
-            this.Controls.Add(this.btnViewPlaylist);
             this.Controls.Add(this.btnClose);
             this.Name = "FrmMain";
             this.Text = "Menu";
@@ -160,12 +109,8 @@
         #endregion
 
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnViewPlaylist;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Label lblTitle1;
-        private System.Windows.Forms.Button btnSearchSongs;
-        private System.Windows.Forms.Button btnModifyPlaylist;
-        private System.Windows.Forms.Button btnRateSongs;
         private System.Windows.Forms.Label lblTitle3;
         private System.Windows.Forms.FlowLayoutPanel flpMainButtons;
     }

@@ -67,22 +67,5 @@ namespace MusicLibrary
             this.Close();
         }
 
-        private void btnViewPlaylist_Click(object sender, EventArgs e)
-        {
-            FrmViewPlaylist viewPlaylist = new FrmViewPlaylist();
-            viewPlaylist.ShowDialog();
-        }
-
-        private void btnSearchSongs_Click(object sender, EventArgs e)
-        {
-            frmSearchSong songForm = new frmSearchSong();
-            songForm.ShowDialog();
-        }
-
-        private void btnRateSongs_Click(object sender, EventArgs e)
-        {
-            frmRateSong rateForm = new frmRateSong();
-            rateForm.ShowDialog();
-        }
     }
 }

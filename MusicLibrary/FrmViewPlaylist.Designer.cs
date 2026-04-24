@@ -38,7 +38,7 @@
             // 
             // txtPlaylistName
             // 
-            this.txtPlaylistName.Location = new System.Drawing.Point(190, 70);
+            this.txtPlaylistName.Location = new System.Drawing.Point(66, 74);
             this.txtPlaylistName.Name = "txtPlaylistName";
             this.txtPlaylistName.Size = new System.Drawing.Size(203, 20);
             this.txtPlaylistName.TabIndex = 2;
@@ -47,7 +47,7 @@
             // 
             this.btnAddPlaylist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnAddPlaylist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddPlaylist.Location = new System.Drawing.Point(399, 70);
+            this.btnAddPlaylist.Location = new System.Drawing.Point(275, 72);
             this.btnAddPlaylist.Name = "btnAddPlaylist";
             this.btnAddPlaylist.Size = new System.Drawing.Size(75, 23);
             this.btnAddPlaylist.TabIndex = 3;
@@ -77,11 +77,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 70);
+            this.label2.Location = new System.Drawing.Point(16, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 20);
+            this.label2.Size = new System.Drawing.Size(44, 20);
             this.label2.TabIndex = 6;
-            this.label2.Text = "New / Rename Playlist:";
+            this.label2.Text = "New:";
             // 
             // btnBack
             // 

@@ -263,6 +263,12 @@ namespace MusicLibrary
 
             AddSong(songName);
         }
+
+        private void btnStopPreview_Click(object sender, EventArgs e)
+        {
+            wmpPreview.Ctlcontrols.stop();
+            wmpPreview.URL = "";
+        }
     }
 
 

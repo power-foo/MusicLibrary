@@ -40,22 +40,24 @@
             // 
             // btnClose
             // 
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnClose.Location = new System.Drawing.Point(836, 540);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(133, 26);
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "Exit";
-            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnViewPlaylist
             // 
+            this.btnViewPlaylist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnViewPlaylist.Location = new System.Drawing.Point(251, 189);
             this.btnViewPlaylist.Name = "btnViewPlaylist";
             this.btnViewPlaylist.Size = new System.Drawing.Size(190, 77);
             this.btnViewPlaylist.TabIndex = 1;
             this.btnViewPlaylist.Text = "View Playlist";
-            this.btnViewPlaylist.UseVisualStyleBackColor = true;
+            this.btnViewPlaylist.UseVisualStyleBackColor = false;
             this.btnViewPlaylist.Click += new System.EventHandler(this.btnViewPlaylist_Click);
             // 
             // lblWelcome
@@ -81,12 +83,13 @@
             // 
             // btnSearchSongs
             // 
+            this.btnSearchSongs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnSearchSongs.Location = new System.Drawing.Point(591, 189);
             this.btnSearchSongs.Name = "btnSearchSongs";
             this.btnSearchSongs.Size = new System.Drawing.Size(190, 77);
             this.btnSearchSongs.TabIndex = 4;
             this.btnSearchSongs.Text = "Search Songs";
-            this.btnSearchSongs.UseVisualStyleBackColor = true;
+            this.btnSearchSongs.UseVisualStyleBackColor = false;
             this.btnSearchSongs.Click += new System.EventHandler(this.btnSearchSongs_Click);
             // 
             // btnModifyPlaylist
@@ -101,12 +104,13 @@
             // 
             // btnRateSongs
             // 
+            this.btnRateSongs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnRateSongs.Location = new System.Drawing.Point(591, 323);
             this.btnRateSongs.Name = "btnRateSongs";
             this.btnRateSongs.Size = new System.Drawing.Size(190, 77);
             this.btnRateSongs.TabIndex = 6;
             this.btnRateSongs.Text = "Rate Songs";
-            this.btnRateSongs.UseVisualStyleBackColor = true;
+            this.btnRateSongs.UseVisualStyleBackColor = false;
             this.btnRateSongs.Click += new System.EventHandler(this.btnRateSongs_Click);
             // 
             // lblTitle3

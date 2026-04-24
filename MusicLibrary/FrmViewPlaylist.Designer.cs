@@ -67,12 +67,13 @@
             // 
             // btnAddPlaylist
             // 
+            this.btnAddPlaylist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnAddPlaylist.Location = new System.Drawing.Point(399, 70);
             this.btnAddPlaylist.Name = "btnAddPlaylist";
             this.btnAddPlaylist.Size = new System.Drawing.Size(75, 23);
             this.btnAddPlaylist.TabIndex = 3;
             this.btnAddPlaylist.Text = "Add Playlist";
-            this.btnAddPlaylist.UseVisualStyleBackColor = true;
+            this.btnAddPlaylist.UseVisualStyleBackColor = false;
             this.btnAddPlaylist.Click += new System.EventHandler(this.btnAddPlaylist_Click);
             // 
             // flpPlaylists
@@ -107,6 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

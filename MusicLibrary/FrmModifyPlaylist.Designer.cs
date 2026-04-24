@@ -35,8 +35,8 @@
             this.btnAddSong = new System.Windows.Forms.Button();
             this.flpSongs = new System.Windows.Forms.FlowLayoutPanel();
             this.lblPlaylistName = new System.Windows.Forms.Label();
-            this.wmpPreview = new AxWMPLib.AxWindowsMediaPlayer();
             this.btnStopPreview = new System.Windows.Forms.Button();
+            this.wmpPreview = new AxWMPLib.AxWindowsMediaPlayer();
             ((System.ComponentModel.ISupportInitialize)(this.wmpPreview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,12 +70,13 @@
             // 
             // btnAddSong
             // 
+            this.btnAddSong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnAddSong.Location = new System.Drawing.Point(166, 420);
             this.btnAddSong.Name = "btnAddSong";
             this.btnAddSong.Size = new System.Drawing.Size(75, 23);
             this.btnAddSong.TabIndex = 3;
             this.btnAddSong.Text = "Add Song";
-            this.btnAddSong.UseVisualStyleBackColor = true;
+            this.btnAddSong.UseVisualStyleBackColor = false;
             this.btnAddSong.Click += new System.EventHandler(this.btnAddSong_Click);
             // 
             // flpSongs
@@ -98,6 +99,17 @@
             this.lblPlaylistName.TabIndex = 5;
             this.lblPlaylistName.Text = "[PLAYLIST NAME]";
             // 
+            // btnStopPreview
+            // 
+            this.btnStopPreview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnStopPreview.Location = new System.Drawing.Point(506, 418);
+            this.btnStopPreview.Name = "btnStopPreview";
+            this.btnStopPreview.Size = new System.Drawing.Size(103, 23);
+            this.btnStopPreview.TabIndex = 7;
+            this.btnStopPreview.Text = "Stop Preview";
+            this.btnStopPreview.UseVisualStyleBackColor = false;
+            this.btnStopPreview.Click += new System.EventHandler(this.btnStopPreview_Click);
+            // 
             // wmpPreview
             // 
             this.wmpPreview.Enabled = true;
@@ -108,19 +120,11 @@
             this.wmpPreview.TabIndex = 6;
             this.wmpPreview.Visible = false;
             // 
-            // btnStopPreview
-            // 
-            this.btnStopPreview.Location = new System.Drawing.Point(506, 418);
-            this.btnStopPreview.Name = "btnStopPreview";
-            this.btnStopPreview.Size = new System.Drawing.Size(103, 23);
-            this.btnStopPreview.TabIndex = 7;
-            this.btnStopPreview.Text = "Stop Preview";
-            this.btnStopPreview.UseVisualStyleBackColor = true;
-            // 
             // FrmModifyPlaylist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnStopPreview);
             this.Controls.Add(this.wmpPreview);

@@ -36,7 +36,8 @@ namespace MusicLibrary
 
         private void btnRateSongs_Click(object sender, EventArgs e)
         {
-
+            frmRateSong rateForm = new frmRateSong();
+            rateForm.ShowDialog();
         }
     }
 }

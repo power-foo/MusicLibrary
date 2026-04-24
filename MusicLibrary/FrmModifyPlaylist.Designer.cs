@@ -51,12 +51,13 @@
             // 
             // btnRemoveSong
             // 
-            this.btnRemoveSong.Location = new System.Drawing.Point(467, 418);
+            this.btnRemoveSong.Location = new System.Drawing.Point(685, 25);
             this.btnRemoveSong.Name = "btnRemoveSong";
             this.btnRemoveSong.Size = new System.Drawing.Size(115, 23);
             this.btnRemoveSong.TabIndex = 1;
             this.btnRemoveSong.Text = "Remove Song";
             this.btnRemoveSong.UseVisualStyleBackColor = true;
+            this.btnRemoveSong.Visible = false;
             this.btnRemoveSong.Click += new System.EventHandler(this.btnRemoveSong_Click);
             // 
             // cboSongs
@@ -109,7 +110,7 @@
             // 
             // btnStopPreview
             // 
-            this.btnStopPreview.Location = new System.Drawing.Point(588, 418);
+            this.btnStopPreview.Location = new System.Drawing.Point(506, 418);
             this.btnStopPreview.Name = "btnStopPreview";
             this.btnStopPreview.Size = new System.Drawing.Size(103, 23);
             this.btnStopPreview.TabIndex = 7;

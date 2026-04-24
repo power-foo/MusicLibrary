@@ -21,6 +21,7 @@ namespace MusicLibrary
             currentPlaylistID = playlistID;
 
             LoadSongs();
+            LoadAllSongs();
         }
 
         private void LoadSongs()
@@ -56,7 +57,66 @@ namespace MusicLibrary
             }
         }
 
-        // NEW CODE
+        private void LoadAllSongs()
+        {
+            cboSongs.Items.Clear();
+
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\MusicLibrary.accdb";
+
+            OleDbConnection myConnection = new OleDbConnection(connectionString);
+
+            try
+            {
+                myConnection.Open();
+
+                string sql = "SELECT SongName FROM Songs";
+
+                OleDbCommand cmd = new OleDbCommand(sql, myConnection);
+
+                OleDbDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    cboSongs.Items.Add(reader["SongName"].ToString());
+                }
+
+                myConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading all songs: " + ex.Message);
+            }
+        }
+
+        private void AddSong(string songName)
+        {
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\MusicLibrary.accdb";
+
+            OleDbConnection myConnection = new OleDbConnection(connectionString);
+
+            try
+            {
+                myConnection.Open();
+
+                string sql = "INSERT INTO PlaylistSong (PlaylistID, SongID) SELECT ?, SongID FROM Songs WHERE SongName = ?";
+
+                OleDbCommand cmd = new OleDbCommand(sql, myConnection);
+                cmd.Parameters.AddWithValue("@playlistID", currentPlaylistID);
+                cmd.Parameters.AddWithValue("@songName", songName);
+
+                cmd.ExecuteNonQuery();
+
+                myConnection.Close();
+
+                LoadSongs();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error adding song: " + ex.Message);
+            }
+        }
+
+
         private void btnRemoveSong_Click(object sender, EventArgs e)
         {
             if (lstSongs.SelectedItem == null)
@@ -69,7 +129,8 @@ namespace MusicLibrary
 
             RemoveSong(songName);
         }
-        // NEW CODE
+
+
         private void RemoveSong(string songName)
         {
             string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\MusicLibrary.accdb";
@@ -98,6 +159,19 @@ namespace MusicLibrary
             }
         }
 
+
+        private void btnAddSong_Click(object sender, EventArgs e)
+        {
+            if (cboSongs.SelectedItem == null)
+            {
+                MessageBox.Show("Select a song first.");
+                return;
+            }
+
+            string songName = cboSongs.SelectedItem.ToString();
+
+            AddSong(songName);
+        }
     }
 
 

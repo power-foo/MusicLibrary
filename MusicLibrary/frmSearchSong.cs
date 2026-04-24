@@ -32,7 +32,7 @@ namespace MusicLibrary
 
             Series series = new Series()
             {
-                ChartType = SeriesChartType.Pie
+                ChartType = SeriesChartType.Bar
             };
 
             var songs = controller.GetSongs();
@@ -40,9 +40,13 @@ namespace MusicLibrary
 
             foreach (var item in groupSongs)
             {
-                series.Points.AddXY(item.Genre, item.Count);
+                int index = series.Points.AddXY(item.Genre, item.Count);
+                series.Points[index].Label = $"{item.Genre}: {item.Count}";
+                series.Points[index].LegendText = $"{item.Genre}: {item.Count}";
             }
             chtGenres.Series.Add(series);
+            series.IsValueShownAsLabel = true;
+            series.LabelForeColor = Color.Black;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -68,7 +72,14 @@ namespace MusicLibrary
                 cmbFilter.Items.Add(genre);
             }
 
+            chtGenres.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+            chtGenres.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
+
+            chtGenres.ChartAreas[0].AxisX.MinorGrid.Enabled = false;
+            chtGenres.ChartAreas[0].AxisY.MinorGrid.Enabled = false;
+
             DisplaySongs(controller.GetSongs());
+            LoadChart();
         }
 
         private void DisplaySongs(List<Song> songs)
@@ -154,20 +165,23 @@ namespace MusicLibrary
         private void SongPanel_Click(object sender, EventArgs e)
         {
             Control clicked = sender as Control;
-            Panel panel = clicked as Panel ?? clicked.Parent as Panel;
 
+            while (clicked != null && !(clicked is Panel))
+            {
+                clicked = clicked.Parent;
+            }
+
+            Panel panel = clicked as Panel;
             if (panel == null) return;
 
             Song song = panel.Tag as Song;
             if (song == null) return;
 
-            // highlight selection
             foreach (Control ctrl in flpSongs.Controls)
                 ctrl.BackColor = SystemColors.Control;
 
             panel.BackColor = Color.LightBlue;
 
-            // show album cover in large picturebox
             LoadSelectedImage(song.AlbumCover);
         }
 
@@ -202,6 +216,7 @@ namespace MusicLibrary
             }
 
             DisplaySongs(controller.SortSongs(column));
+            LoadChart();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -209,6 +224,7 @@ namespace MusicLibrary
             if (cmbFilter.SelectedItem == null) return;
 
             DisplaySongs(controller.FilterSongs(cmbFilter.SelectedItem.ToString()));
+            LoadChart();
         }
     }
 }

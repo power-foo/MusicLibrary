@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.flpSongs = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSort = new System.Windows.Forms.Button();
             this.picSelectedAlbum = new System.Windows.Forms.PictureBox();
@@ -62,7 +62,7 @@
             this.btnSort.ForeColor = System.Drawing.Color.Navy;
             this.btnSort.Location = new System.Drawing.Point(12, 431);
             this.btnSort.Name = "btnSort";
-            this.btnSort.Size = new System.Drawing.Size(174, 81);
+            this.btnSort.Size = new System.Drawing.Size(125, 81);
             this.btnSort.TabIndex = 23;
             this.btnSort.Text = "Sort By Criteria";
             this.btnSort.UseVisualStyleBackColor = false;
@@ -81,9 +81,9 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnSearch.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.Navy;
-            this.btnSearch.Location = new System.Drawing.Point(237, 431);
+            this.btnSearch.Location = new System.Drawing.Point(181, 431);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(174, 81);
+            this.btnSearch.Size = new System.Drawing.Size(125, 81);
             this.btnSearch.TabIndex = 25;
             this.btnSearch.Text = "Search by Criteria";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -94,9 +94,9 @@
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnClose.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.Navy;
-            this.btnClose.Location = new System.Drawing.Point(474, 431);
+            this.btnClose.Location = new System.Drawing.Point(350, 431);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(174, 81);
+            this.btnClose.Size = new System.Drawing.Size(125, 81);
             this.btnClose.TabIndex = 26;
             this.btnClose.Text = "Close Window";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -105,7 +105,7 @@
             // cmbSort
             // 
             this.cmbSort.FormattingEnabled = true;
-            this.cmbSort.Location = new System.Drawing.Point(37, 374);
+            this.cmbSort.Location = new System.Drawing.Point(12, 374);
             this.cmbSort.Name = "cmbSort";
             this.cmbSort.Size = new System.Drawing.Size(130, 24);
             this.cmbSort.TabIndex = 27;
@@ -113,7 +113,7 @@
             // cmbFilter
             // 
             this.cmbFilter.FormattingEnabled = true;
-            this.cmbFilter.Location = new System.Drawing.Point(258, 374);
+            this.cmbFilter.Location = new System.Drawing.Point(181, 374);
             this.cmbFilter.Name = "cmbFilter";
             this.cmbFilter.Size = new System.Drawing.Size(130, 24);
             this.cmbFilter.TabIndex = 28;
@@ -123,7 +123,7 @@
             this.lblSort.AutoSize = true;
             this.lblSort.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSort.ForeColor = System.Drawing.Color.Navy;
-            this.lblSort.Location = new System.Drawing.Point(66, 342);
+            this.lblSort.Location = new System.Drawing.Point(38, 342);
             this.lblSort.Name = "lblSort";
             this.lblSort.Size = new System.Drawing.Size(71, 20);
             this.lblSort.TabIndex = 29;
@@ -134,7 +134,7 @@
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearch.ForeColor = System.Drawing.Color.Navy;
-            this.lblSearch.Location = new System.Drawing.Point(276, 342);
+            this.lblSearch.Location = new System.Drawing.Point(199, 342);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(91, 20);
             this.lblSearch.TabIndex = 30;
@@ -143,18 +143,20 @@
             // chtGenres
             // 
             this.chtGenres.BackColor = System.Drawing.Color.Transparent;
-            chartArea5.Name = "ChartArea1";
-            this.chtGenres.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chtGenres.Legends.Add(legend5);
-            this.chtGenres.Location = new System.Drawing.Point(676, 295);
+            chartArea1.Name = "ChartArea1";
+            this.chtGenres.ChartAreas.Add(chartArea1);
+            legend1.Enabled = false;
+            legend1.Name = "Legend1";
+            this.chtGenres.Legends.Add(legend1);
+            this.chtGenres.Location = new System.Drawing.Point(519, 342);
             this.chtGenres.Name = "chtGenres";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chtGenres.Series.Add(series5);
-            this.chtGenres.Size = new System.Drawing.Size(269, 242);
+            this.chtGenres.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chtGenres.Series.Add(series1);
+            this.chtGenres.Size = new System.Drawing.Size(426, 195);
             this.chtGenres.TabIndex = 31;
             this.chtGenres.Text = "Song Genres";
             // 

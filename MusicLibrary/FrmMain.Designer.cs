@@ -30,13 +30,12 @@
         {
             this.btnClose = new System.Windows.Forms.Button();
             this.btnViewPlaylist = new System.Windows.Forms.Button();
-            this.lblTitle2 = new System.Windows.Forms.Label();
+            this.lblWelcome = new System.Windows.Forms.Label();
             this.lblTitle1 = new System.Windows.Forms.Label();
             this.btnSearchSongs = new System.Windows.Forms.Button();
             this.btnModifyPlaylist = new System.Windows.Forms.Button();
             this.btnRateSongs = new System.Windows.Forms.Button();
             this.lblTitle3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnClose
@@ -59,15 +58,15 @@
             this.btnViewPlaylist.UseVisualStyleBackColor = true;
             this.btnViewPlaylist.Click += new System.EventHandler(this.btnViewPlaylist_Click);
             // 
-            // lblTitle2
+            // lblWelcome
             // 
-            this.lblTitle2.AutoSize = true;
-            this.lblTitle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle2.Location = new System.Drawing.Point(360, 99);
-            this.lblTitle2.Name = "lblTitle2";
-            this.lblTitle2.Size = new System.Drawing.Size(295, 29);
-            this.lblTitle2.TabIndex = 2;
-            this.lblTitle2.Text = "Welcome, [USERNAME]";
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.Location = new System.Drawing.Point(360, 99);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(295, 29);
+            this.lblWelcome.TabIndex = 2;
+            this.lblWelcome.Text = "Welcome, [USERNAME]";
             // 
             // lblTitle1
             // 
@@ -121,28 +120,18 @@
             this.lblTitle3.TabIndex = 7;
             this.lblTitle3.Text = "Choose an option to continue";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(343, 358);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 69);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1006, 591);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblTitle3);
             this.Controls.Add(this.btnRateSongs);
             this.Controls.Add(this.btnModifyPlaylist);
             this.Controls.Add(this.btnSearchSongs);
             this.Controls.Add(this.lblTitle1);
-            this.Controls.Add(this.lblTitle2);
+            this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.btnViewPlaylist);
             this.Controls.Add(this.btnClose);
             this.Name = "FrmMain";
@@ -156,12 +145,11 @@
 
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnViewPlaylist;
-        private System.Windows.Forms.Label lblTitle2;
+        private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Label lblTitle1;
         private System.Windows.Forms.Button btnSearchSongs;
         private System.Windows.Forms.Button btnModifyPlaylist;
         private System.Windows.Forms.Button btnRateSongs;
         private System.Windows.Forms.Label lblTitle3;
-        private System.Windows.Forms.Button button1;
     }
 }

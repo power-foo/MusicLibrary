@@ -28,18 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmModifyPlaylist));
             this.lstSongs = new System.Windows.Forms.ListBox();
             this.btnRemoveSong = new System.Windows.Forms.Button();
             this.cboSongs = new System.Windows.Forms.ComboBox();
             this.btnAddSong = new System.Windows.Forms.Button();
             this.flpSongs = new System.Windows.Forms.FlowLayoutPanel();
             this.lblPlaylistName = new System.Windows.Forms.Label();
+            this.wmpPreview = new AxWMPLib.AxWindowsMediaPlayer();
+            this.btnStopPreview = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpPreview)).BeginInit();
             this.SuspendLayout();
             // 
             // lstSongs
             // 
             this.lstSongs.FormattingEnabled = true;
-            this.lstSongs.Location = new System.Drawing.Point(575, 378);
+            this.lstSongs.Location = new System.Drawing.Point(628, -16);
             this.lstSongs.Name = "lstSongs";
             this.lstSongs.Size = new System.Drawing.Size(239, 186);
             this.lstSongs.TabIndex = 0;
@@ -47,7 +51,7 @@
             // 
             // btnRemoveSong
             // 
-            this.btnRemoveSong.Location = new System.Drawing.Point(494, 418);
+            this.btnRemoveSong.Location = new System.Drawing.Point(467, 418);
             this.btnRemoveSong.Name = "btnRemoveSong";
             this.btnRemoveSong.Size = new System.Drawing.Size(115, 23);
             this.btnRemoveSong.TabIndex = 1;
@@ -93,11 +97,32 @@
             this.lblPlaylistName.TabIndex = 5;
             this.lblPlaylistName.Text = "[PLAYLIST NAME]";
             // 
+            // wmpPreview
+            // 
+            this.wmpPreview.Enabled = true;
+            this.wmpPreview.Location = new System.Drawing.Point(57, 193);
+            this.wmpPreview.Name = "wmpPreview";
+            this.wmpPreview.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpPreview.OcxState")));
+            this.wmpPreview.Size = new System.Drawing.Size(75, 23);
+            this.wmpPreview.TabIndex = 6;
+            this.wmpPreview.Visible = false;
+            // 
+            // btnStopPreview
+            // 
+            this.btnStopPreview.Location = new System.Drawing.Point(588, 418);
+            this.btnStopPreview.Name = "btnStopPreview";
+            this.btnStopPreview.Size = new System.Drawing.Size(103, 23);
+            this.btnStopPreview.TabIndex = 7;
+            this.btnStopPreview.Text = "Stop Preview";
+            this.btnStopPreview.UseVisualStyleBackColor = true;
+            // 
             // FrmModifyPlaylist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnStopPreview);
+            this.Controls.Add(this.wmpPreview);
             this.Controls.Add(this.lblPlaylistName);
             this.Controls.Add(this.flpSongs);
             this.Controls.Add(this.btnAddSong);
@@ -106,6 +131,7 @@
             this.Controls.Add(this.lstSongs);
             this.Name = "FrmModifyPlaylist";
             this.Text = "FrmModifyPlaylist";
+            ((System.ComponentModel.ISupportInitialize)(this.wmpPreview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,5 +145,7 @@
         private System.Windows.Forms.Button btnAddSong;
         private System.Windows.Forms.FlowLayoutPanel flpSongs;
         private System.Windows.Forms.Label lblPlaylistName;
+        private AxWMPLib.AxWindowsMediaPlayer wmpPreview;
+        private System.Windows.Forms.Button btnStopPreview;
     }
 }

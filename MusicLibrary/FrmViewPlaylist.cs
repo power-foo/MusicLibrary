@@ -58,9 +58,11 @@ namespace MusicLibrary
 
                     int playlistID = Convert.ToInt32(reader["PlaylistID"]);
 
+                    string playlistName = reader["PlaylistName"].ToString();
+
                     btnView.Click += (s, e) =>
                     {
-                        FrmModifyPlaylist frm = new FrmModifyPlaylist(playlistID);
+                        FrmModifyPlaylist frm = new FrmModifyPlaylist(playlistID, playlistName);
                         frm.Show();
                     };
 

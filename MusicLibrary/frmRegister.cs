@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace MusicLibrary
 {
+    // Tri Le
     public partial class frmRegister : Form
     {
         public frmRegister()

@@ -16,7 +16,5 @@ namespace MusicLibrary
         public string AlbumName { get; set; }
         public string AlbumCover { get; set; }
         public DateTime ReleaseDate { get; set; }
-        public string ReviewText { get; set; }
-        public int RatingValue { get; set; }
     }
 }

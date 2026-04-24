@@ -52,16 +52,16 @@ namespace MusicLibrary
                     lblPlaylistName.Font = new Font("Arial", 12, FontStyle.Bold);
 
                     Button btnView = new Button();
-                    btnView.Text = "Rename";
+                    btnView.Text = "Open";
                     btnView.Location = new Point(10, 50);
                     btnView.Width = 90;
 
-                    // NEW CODE
                     int playlistID = Convert.ToInt32(reader["PlaylistID"]);
 
                     btnView.Click += (s, e) =>
                     {
-                        RenamePlaylist(playlistID);
+                        FrmModifyPlaylist frm = new FrmModifyPlaylist(playlistID);
+                        frm.Show();
                     };
 
                     Button btnDelete = new Button();

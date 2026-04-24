@@ -38,7 +38,7 @@ namespace MusicLibrary
             {
                 myConnection.Open();
 
-                string sql = "SELECT Songs.SongID, SongName, Artist, AlbumCover FROM Songs INNER JOIN PlaylistSong ON Songs.SongID = PlaylistSong.SongID WHERE PlaylistID = ?";
+                string sql = "SELECT Songs.SongID, SongName, Artist, AlbumCover, PreviewURL FROM Songs INNER JOIN PlaylistSong ON Songs.SongID = PlaylistSong.SongID WHERE PlaylistID = ?";
 
                 OleDbCommand cmd = new OleDbCommand(sql, myConnection);
                 cmd.Parameters.AddWithValue("@id", currentPlaylistID);
@@ -84,6 +84,19 @@ namespace MusicLibrary
                     btnRemove.Location = new Point(115, 75);
                     btnRemove.Width = 90;
 
+                    Button btnPreview = new Button();
+                    btnPreview.Text = "Preview";
+                    btnPreview.Location = new Point(210, 75);
+                    btnPreview.Width = 90;
+
+                    string previewURL = reader["PreviewURL"].ToString();
+
+                    btnPreview.Click += (s, e) =>
+                    {
+                        wmpPreview.URL = previewURL;
+                        wmpPreview.Ctlcontrols.play();
+                    };
+
                     int songID = Convert.ToInt32(reader["SongID"]);
 
                     btnRemove.Click += (s, e) =>
@@ -95,6 +108,7 @@ namespace MusicLibrary
                     songPanel.Controls.Add(lblSong);
                     songPanel.Controls.Add(lblArtist);
                     songPanel.Controls.Add(btnRemove);
+                    songPanel.Controls.Add(btnPreview);
 
                     flpSongs.Controls.Add(songPanel);
                 }

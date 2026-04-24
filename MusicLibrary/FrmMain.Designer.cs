@@ -41,10 +41,9 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(1115, 665);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Location = new System.Drawing.Point(836, 540);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(177, 32);
+            this.btnClose.Size = new System.Drawing.Size(133, 26);
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "Exit";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -52,10 +51,9 @@
             // 
             // btnViewPlaylist
             // 
-            this.btnViewPlaylist.Location = new System.Drawing.Point(335, 233);
-            this.btnViewPlaylist.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnViewPlaylist.Location = new System.Drawing.Point(251, 189);
             this.btnViewPlaylist.Name = "btnViewPlaylist";
-            this.btnViewPlaylist.Size = new System.Drawing.Size(253, 95);
+            this.btnViewPlaylist.Size = new System.Drawing.Size(190, 77);
             this.btnViewPlaylist.TabIndex = 1;
             this.btnViewPlaylist.Text = "View Playlist";
             this.btnViewPlaylist.UseVisualStyleBackColor = true;
@@ -65,10 +63,9 @@
             // 
             this.lblTitle2.AutoSize = true;
             this.lblTitle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle2.Location = new System.Drawing.Point(480, 122);
-            this.lblTitle2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle2.Location = new System.Drawing.Point(360, 99);
             this.lblTitle2.Name = "lblTitle2";
-            this.lblTitle2.Size = new System.Drawing.Size(361, 36);
+            this.lblTitle2.Size = new System.Drawing.Size(295, 29);
             this.lblTitle2.TabIndex = 2;
             this.lblTitle2.Text = "Welcome, [USERNAME]";
             // 
@@ -77,19 +74,17 @@
             this.lblTitle1.AutoSize = true;
             this.lblTitle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.lblTitle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle1.Location = new System.Drawing.Point(39, 31);
-            this.lblTitle1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle1.Location = new System.Drawing.Point(29, 25);
             this.lblTitle1.Name = "lblTitle1";
-            this.lblTitle1.Size = new System.Drawing.Size(207, 36);
+            this.lblTitle1.Size = new System.Drawing.Size(168, 29);
             this.lblTitle1.TabIndex = 3;
             this.lblTitle1.Text = "Music Library";
             // 
             // btnSearchSongs
             // 
-            this.btnSearchSongs.Location = new System.Drawing.Point(788, 233);
-            this.btnSearchSongs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearchSongs.Location = new System.Drawing.Point(591, 189);
             this.btnSearchSongs.Name = "btnSearchSongs";
-            this.btnSearchSongs.Size = new System.Drawing.Size(253, 95);
+            this.btnSearchSongs.Size = new System.Drawing.Size(190, 77);
             this.btnSearchSongs.TabIndex = 4;
             this.btnSearchSongs.Text = "Search Songs";
             this.btnSearchSongs.UseVisualStyleBackColor = true;
@@ -97,10 +92,9 @@
             // 
             // btnModifyPlaylist
             // 
-            this.btnModifyPlaylist.Location = new System.Drawing.Point(-23, 665);
-            this.btnModifyPlaylist.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModifyPlaylist.Location = new System.Drawing.Point(-17, 540);
             this.btnModifyPlaylist.Name = "btnModifyPlaylist";
-            this.btnModifyPlaylist.Size = new System.Drawing.Size(253, 95);
+            this.btnModifyPlaylist.Size = new System.Drawing.Size(190, 77);
             this.btnModifyPlaylist.TabIndex = 5;
             this.btnModifyPlaylist.Text = "Modify Playlist";
             this.btnModifyPlaylist.UseVisualStyleBackColor = true;
@@ -108,10 +102,9 @@
             // 
             // btnRateSongs
             // 
-            this.btnRateSongs.Location = new System.Drawing.Point(788, 398);
-            this.btnRateSongs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRateSongs.Location = new System.Drawing.Point(591, 323);
             this.btnRateSongs.Name = "btnRateSongs";
-            this.btnRateSongs.Size = new System.Drawing.Size(253, 95);
+            this.btnRateSongs.Size = new System.Drawing.Size(190, 77);
             this.btnRateSongs.TabIndex = 6;
             this.btnRateSongs.Text = "Rate Songs";
             this.btnRateSongs.UseVisualStyleBackColor = true;
@@ -122,28 +115,27 @@
             this.lblTitle3.AutoSize = true;
             this.lblTitle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.lblTitle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle3.Location = new System.Drawing.Point(39, 66);
-            this.lblTitle3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle3.Location = new System.Drawing.Point(29, 54);
             this.lblTitle3.Name = "lblTitle3";
-            this.lblTitle3.Size = new System.Drawing.Size(325, 29);
+            this.lblTitle3.Size = new System.Drawing.Size(257, 24);
             this.lblTitle3.TabIndex = 7;
             this.lblTitle3.Text = "Choose an option to continue";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(448, 425);
+            this.button1.Location = new System.Drawing.Point(343, 358);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(98, 69);
             this.button1.TabIndex = 8;
-            this.button1.Text = "testing";
+            this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1341, 727);
+            this.ClientSize = new System.Drawing.Size(1006, 591);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblTitle3);
             this.Controls.Add(this.btnRateSongs);
@@ -153,7 +145,6 @@
             this.Controls.Add(this.lblTitle2);
             this.Controls.Add(this.btnViewPlaylist);
             this.Controls.Add(this.btnClose);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmMain";
             this.Text = "Menu";
             this.ResumeLayout(false);

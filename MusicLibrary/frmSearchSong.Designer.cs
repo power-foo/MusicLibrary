@@ -73,6 +73,7 @@
             this.picSelectedAlbum.Location = new System.Drawing.Point(676, 13);
             this.picSelectedAlbum.Name = "picSelectedAlbum";
             this.picSelectedAlbum.Size = new System.Drawing.Size(269, 195);
+            this.picSelectedAlbum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSelectedAlbum.TabIndex = 24;
             this.picSelectedAlbum.TabStop = false;
             // 

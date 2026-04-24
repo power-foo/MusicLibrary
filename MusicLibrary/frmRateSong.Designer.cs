@@ -36,7 +36,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblSaveTitle = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbSongs = new System.Windows.Forms.ComboBox();
             this.nudRating = new System.Windows.Forms.NumericUpDown();
             this.lblRating = new System.Windows.Forms.Label();
             this.lblReview = new System.Windows.Forms.Label();
@@ -66,6 +66,7 @@
             this.btnSave.TabIndex = 24;
             this.btnSave.Text = "Save Review";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lblReviewTitle
             // 
@@ -113,6 +114,7 @@
             this.btnDelete.TabIndex = 36;
             this.btnDelete.Text = "Delete Review";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // label1
             // 
@@ -135,13 +137,13 @@
             this.lblSaveTitle.TabIndex = 38;
             this.lblSaveTitle.Text = "Song Title:";
             // 
-            // comboBox1
+            // cmbSongs
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(668, 160);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(277, 24);
-            this.comboBox1.TabIndex = 39;
+            this.cmbSongs.FormattingEnabled = true;
+            this.cmbSongs.Location = new System.Drawing.Point(668, 160);
+            this.cmbSongs.Name = "cmbSongs";
+            this.cmbSongs.Size = new System.Drawing.Size(277, 24);
+            this.cmbSongs.TabIndex = 39;
             // 
             // nudRating
             // 
@@ -195,7 +197,7 @@
             this.Controls.Add(this.lblReview);
             this.Controls.Add(this.lblRating);
             this.Controls.Add(this.nudRating);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbSongs);
             this.Controls.Add(this.lblSaveTitle);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDelete);
@@ -206,6 +208,7 @@
             this.Controls.Add(this.dgvReviews);
             this.Name = "frmRateSong";
             this.Text = "Music Library - Rate a Song";
+            this.Load += new System.EventHandler(this.frmRateSong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReviews)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRating)).EndInit();
             this.ResumeLayout(false);
@@ -223,7 +226,7 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblSaveTitle;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbSongs;
         private System.Windows.Forms.NumericUpDown nudRating;
         private System.Windows.Forms.Label lblRating;
         private System.Windows.Forms.Label lblReview;

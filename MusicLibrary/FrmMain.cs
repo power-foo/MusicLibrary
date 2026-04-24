@@ -33,5 +33,10 @@ namespace MusicLibrary
             frmSearchSong songForm = new frmSearchSong();
             songForm.ShowDialog();
         }
+
+        private void btnRateSongs_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

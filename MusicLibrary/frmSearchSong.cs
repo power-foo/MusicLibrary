@@ -24,7 +24,7 @@ namespace MusicLibrary
             InitializeComponent();
         }
 
-        /* Tri Le Learning Opportunity: Visualizing the data with a Chart (Pie Chart), specifically 
+        /* Tri Le Learning Opportunity: Visualizing the data with a Chart (Bar Chart), specifically 
          showing how many songs of each genre there are within the database */
         private void LoadChart()
         {

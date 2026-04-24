@@ -37,7 +37,7 @@ namespace MusicLibrary
             if (controller.Login(myUser))
             {
                 MessageBox.Show("Login successful.");
-                FrmMain menuForm = new FrmMain();
+                FrmMain menuForm = new FrmMain(txtLoginUser.Text.Trim());
                 this.Hide();
                 menuForm.ShowDialog();
                 this.Show();

@@ -12,9 +12,10 @@ namespace MusicLibrary
 {
     public partial class FrmMain : Form
     {
-        public FrmMain()
+        public FrmMain(string username)
         {
             InitializeComponent();
+            lblWelcome.Text = "Welcome, " + username;
         }
 
         private void btnClose_Click(object sender, EventArgs e)

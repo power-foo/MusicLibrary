@@ -36,6 +36,7 @@
             this.btnModifyPlaylist = new System.Windows.Forms.Button();
             this.btnRateSongs = new System.Windows.Forms.Button();
             this.lblTitle3 = new System.Windows.Forms.Label();
+            this.flpMainButtons = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // btnClose
@@ -52,7 +53,7 @@
             // btnViewPlaylist
             // 
             this.btnViewPlaylist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnViewPlaylist.Location = new System.Drawing.Point(251, 189);
+            this.btnViewPlaylist.Location = new System.Drawing.Point(779, 25);
             this.btnViewPlaylist.Name = "btnViewPlaylist";
             this.btnViewPlaylist.Size = new System.Drawing.Size(190, 77);
             this.btnViewPlaylist.TabIndex = 1;
@@ -64,7 +65,7 @@
             // 
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(360, 99);
+            this.lblWelcome.Location = new System.Drawing.Point(358, 50);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(295, 29);
             this.lblWelcome.TabIndex = 2;
@@ -84,7 +85,7 @@
             // btnSearchSongs
             // 
             this.btnSearchSongs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnSearchSongs.Location = new System.Drawing.Point(591, 189);
+            this.btnSearchSongs.Location = new System.Drawing.Point(804, 99);
             this.btnSearchSongs.Name = "btnSearchSongs";
             this.btnSearchSongs.Size = new System.Drawing.Size(190, 77);
             this.btnSearchSongs.TabIndex = 4;
@@ -105,7 +106,7 @@
             // btnRateSongs
             // 
             this.btnRateSongs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnRateSongs.Location = new System.Drawing.Point(591, 323);
+            this.btnRateSongs.Location = new System.Drawing.Point(804, 198);
             this.btnRateSongs.Name = "btnRateSongs";
             this.btnRateSongs.Size = new System.Drawing.Size(190, 77);
             this.btnRateSongs.TabIndex = 6;
@@ -124,12 +125,23 @@
             this.lblTitle3.TabIndex = 7;
             this.lblTitle3.Text = "Choose an option to continue";
             // 
+            // flpMainButtons
+            // 
+            this.flpMainButtons.AutoScroll = true;
+            this.flpMainButtons.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpMainButtons.Location = new System.Drawing.Point(60, 113);
+            this.flpMainButtons.Name = "flpMainButtons";
+            this.flpMainButtons.Size = new System.Drawing.Size(709, 403);
+            this.flpMainButtons.TabIndex = 8;
+            this.flpMainButtons.WrapContents = false;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1006, 591);
+            this.Controls.Add(this.flpMainButtons);
             this.Controls.Add(this.lblTitle3);
             this.Controls.Add(this.btnRateSongs);
             this.Controls.Add(this.btnModifyPlaylist);
@@ -155,5 +167,6 @@
         private System.Windows.Forms.Button btnModifyPlaylist;
         private System.Windows.Forms.Button btnRateSongs;
         private System.Windows.Forms.Label lblTitle3;
+        private System.Windows.Forms.FlowLayoutPanel flpMainButtons;
     }
 }

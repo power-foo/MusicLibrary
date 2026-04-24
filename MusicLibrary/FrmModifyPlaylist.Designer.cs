@@ -30,6 +30,8 @@
         {
             this.lstSongs = new System.Windows.Forms.ListBox();
             this.btnRemoveSong = new System.Windows.Forms.Button();
+            this.cboSongs = new System.Windows.Forms.ComboBox();
+            this.btnAddSong = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstSongs
@@ -50,11 +52,31 @@
             this.btnRemoveSong.UseVisualStyleBackColor = true;
             this.btnRemoveSong.Click += new System.EventHandler(this.btnRemoveSong_Click);
             // 
+            // cboSongs
+            // 
+            this.cboSongs.FormattingEnabled = true;
+            this.cboSongs.Location = new System.Drawing.Point(269, 12);
+            this.cboSongs.Name = "cboSongs";
+            this.cboSongs.Size = new System.Drawing.Size(187, 21);
+            this.cboSongs.TabIndex = 2;
+            // 
+            // btnAddSong
+            // 
+            this.btnAddSong.Location = new System.Drawing.Point(462, 12);
+            this.btnAddSong.Name = "btnAddSong";
+            this.btnAddSong.Size = new System.Drawing.Size(75, 23);
+            this.btnAddSong.TabIndex = 3;
+            this.btnAddSong.Text = "Add Song";
+            this.btnAddSong.UseVisualStyleBackColor = true;
+            this.btnAddSong.Click += new System.EventHandler(this.btnAddSong_Click);
+            // 
             // FrmModifyPlaylist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAddSong);
+            this.Controls.Add(this.cboSongs);
             this.Controls.Add(this.btnRemoveSong);
             this.Controls.Add(this.lstSongs);
             this.Name = "FrmModifyPlaylist";
@@ -67,5 +89,7 @@
 
         private System.Windows.Forms.ListBox lstSongs;
         private System.Windows.Forms.Button btnRemoveSong;
+        private System.Windows.Forms.ComboBox cboSongs;
+        private System.Windows.Forms.Button btnAddSong;
     }
 }

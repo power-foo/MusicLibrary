@@ -16,33 +16,57 @@ namespace MusicLibrary
         public FrmViewPlaylist()
         {
             InitializeComponent();
+            LoadPlaylists();
         }
 
-        private void btnLoadPlaylists_Click(object sender, EventArgs e)
+        private void LoadPlaylists()
         {
-            string connectionString;
-            OleDbConnection myConnection;
-            OleDbCommand myCommand;
-            OleDbDataAdapter myAdapter;
-            DataTable myTable;
-            string sql;
+            flpPlaylists.Controls.Clear();
 
-            connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\MusicLibrary.accdb";
-            myConnection = new OleDbConnection(connectionString);
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\MusicLibrary.accdb";
+
+            OleDbConnection myConnection = new OleDbConnection(connectionString);
 
             try
             {
                 myConnection.Open();
 
-                sql = "SELECT * FROM Playlist";
-                myCommand = new OleDbCommand(sql, myConnection);
+                string sql = "SELECT * FROM Playlist";
 
-                myAdapter = new OleDbDataAdapter(myCommand);
-                myTable = new DataTable();
+                OleDbCommand myCommand = new OleDbCommand(sql, myConnection);
 
-                myAdapter.Fill(myTable);
+                OleDbDataReader reader = myCommand.ExecuteReader();
 
-                dgvPlaylists.DataSource = myTable;
+                while (reader.Read())
+                {
+                    Panel playlistPanel = new Panel();
+                    playlistPanel.Width = 300;
+                    playlistPanel.Height = 100;
+                    playlistPanel.BorderStyle = BorderStyle.FixedSingle;
+                    playlistPanel.Margin = new Padding(10);
+
+                    Label lblPlaylistName = new Label();
+                    lblPlaylistName.Text = reader["PlaylistName"].ToString();
+                    lblPlaylistName.Location = new Point(10, 10);
+                    lblPlaylistName.Width = 250;
+                    lblPlaylistName.Font = new Font("Arial", 12, FontStyle.Bold);
+
+                    Button btnView = new Button();
+                    btnView.Text = "View/Edit";
+                    btnView.Location = new Point(10, 50);
+                    btnView.Width = 90;
+
+                    Button btnDelete = new Button();
+                    btnDelete.Text = "Delete";
+                    btnDelete.Location = new Point(110, 50);
+                    btnDelete.Width = 80;
+
+                    playlistPanel.Controls.Add(lblPlaylistName);
+                    playlistPanel.Controls.Add(btnView);
+                    playlistPanel.Controls.Add(btnDelete);
+
+                    flpPlaylists.Controls.Add(playlistPanel);
+                }
 
                 myConnection.Close();
             }
@@ -52,8 +76,38 @@ namespace MusicLibrary
             }
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private void btnLoadPlaylists_Click(object sender, EventArgs e)
+        {
+            LoadPlaylists();
+
+        }
+
         private void btnAddPlaylist_Click(object sender, EventArgs e)
         {
+
+            if (txtPlaylistName.Text == "")
+            {
+                MessageBox.Show("Please enter a playlist name.");
+                return;
+            }
+
             string connectionString;
             OleDbConnection myConnection;
             OleDbCommand myCommand;
@@ -78,7 +132,8 @@ namespace MusicLibrary
 
                 myConnection.Close();
 
-                btnLoadPlaylists_Click(sender, e);
+                LoadPlaylists();
+                txtPlaylistName.Clear();
             }
             catch
             {

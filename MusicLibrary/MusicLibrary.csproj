@@ -61,6 +61,12 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmModifyPlaylist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModifyPlaylist.Designer.cs">
+      <DependentUpon>FrmModifyPlaylist.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModifyPlaylist.resx">
+      <DependentUpon>FrmModifyPlaylist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegister.resx">
       <DependentUpon>frmRegister.cs</DependentUpon>

@@ -52,14 +52,27 @@ namespace MusicLibrary
                     lblPlaylistName.Font = new Font("Arial", 12, FontStyle.Bold);
 
                     Button btnView = new Button();
-                    btnView.Text = "View/Edit";
+                    btnView.Text = "Open";
                     btnView.Location = new Point(10, 50);
                     btnView.Width = 90;
+
+                    int playlistID = Convert.ToInt32(reader["PlaylistID"]);
+
+                    btnView.Click += (s, e) =>
+                    {
+                        FrmModifyPlaylist frm = new FrmModifyPlaylist(playlistID);
+                        frm.Show();
+                    };
 
                     Button btnDelete = new Button();
                     btnDelete.Text = "Delete";
                     btnDelete.Location = new Point(110, 50);
                     btnDelete.Width = 80;
+
+                    btnDelete.Click += (s, e) =>
+                    {
+                        DeletePlaylist(playlistID);
+                    };
 
                     playlistPanel.Controls.Add(lblPlaylistName);
                     playlistPanel.Controls.Add(btnView);
@@ -76,17 +89,71 @@ namespace MusicLibrary
             }
         }
 
+        private void DeletePlaylist(int playlistID)
+        {
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\MusicLibrary.accdb";
+
+            OleDbConnection myConnection = new OleDbConnection(connectionString);
+
+            try
+            {
+                myConnection.Open();
+
+                string sql = "DELETE FROM Playlist WHERE PlaylistID = ?";
+
+                OleDbCommand cmd = new OleDbCommand(sql, myConnection);
+                cmd.Parameters.AddWithValue("@id", playlistID);
+
+                cmd.ExecuteNonQuery();
+
+                myConnection.Close();
+
+                LoadPlaylists();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error deleting playlist: " + ex.Message);
+            }
+        }
 
 
+        private void RenamePlaylist(int playlistID)
+        {
 
+            string newName = txtPlaylistName.Text;
 
+            if (newName == "")
+            {
+                MessageBox.Show("Enter the new playlist name in the textbox first.");
+                return;
+            }
 
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\MusicLibrary.accdb";
 
+            OleDbConnection myConnection = new OleDbConnection(connectionString);
 
+            try
+            {
+                myConnection.Open();
 
+                string sql = "UPDATE Playlist SET PlaylistName = ? WHERE PlaylistID = ?";
 
+                OleDbCommand cmd = new OleDbCommand(sql, myConnection);
+                cmd.Parameters.AddWithValue("@name", newName);
+                cmd.Parameters.AddWithValue("@id", playlistID);
 
+                cmd.ExecuteNonQuery();
 
+                myConnection.Close();
+
+                LoadPlaylists();
+                txtPlaylistName.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating playlist: " + ex.Message);
+            }
+        }
 
 
 

@@ -91,12 +91,13 @@
             // 
             // btnModifyPlaylist
             // 
-            this.btnModifyPlaylist.Location = new System.Drawing.Point(251, 323);
+            this.btnModifyPlaylist.Location = new System.Drawing.Point(-17, 540);
             this.btnModifyPlaylist.Name = "btnModifyPlaylist";
             this.btnModifyPlaylist.Size = new System.Drawing.Size(190, 77);
             this.btnModifyPlaylist.TabIndex = 5;
             this.btnModifyPlaylist.Text = "Modify Playlist";
             this.btnModifyPlaylist.UseVisualStyleBackColor = true;
+            this.btnModifyPlaylist.Visible = false;
             // 
             // btnRateSongs
             // 

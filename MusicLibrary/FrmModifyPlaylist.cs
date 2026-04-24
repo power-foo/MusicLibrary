@@ -207,50 +207,6 @@ namespace MusicLibrary
             }
         }
 
-
-        private void btnRemoveSong_Click(object sender, EventArgs e)
-        {
-            if (lstSongs.SelectedItem == null)
-            {
-                MessageBox.Show("Select a song first.");
-                return;
-            }
-
-            string songName = lstSongs.SelectedItem.ToString();
-
-            RemoveSong(songName);
-        }
-
-
-        private void RemoveSong(string songName)
-        {
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\MusicLibrary.accdb";
-
-            OleDbConnection myConnection = new OleDbConnection(connectionString);
-
-            try
-            {
-                myConnection.Open();
-
-                string sql = "DELETE FROM PlaylistSong WHERE SongID = (SELECT SongID FROM Songs WHERE SongName = ?) AND PlaylistID = ?";
-
-                OleDbCommand cmd = new OleDbCommand(sql, myConnection);
-                cmd.Parameters.AddWithValue("@name", songName);
-                cmd.Parameters.AddWithValue("@id", currentPlaylistID);
-
-                cmd.ExecuteNonQuery();
-
-                myConnection.Close();
-
-                LoadSongs();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error removing song: " + ex.Message);
-            }
-        }
-
-
         private void btnAddSong_Click(object sender, EventArgs e)
         {
             if (cboSongs.SelectedItem == null)

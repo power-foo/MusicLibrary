@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmModifyPlaylist));
-            this.lstSongs = new System.Windows.Forms.ListBox();
-            this.btnRemoveSong = new System.Windows.Forms.Button();
             this.cboSongs = new System.Windows.Forms.ComboBox();
             this.btnAddSong = new System.Windows.Forms.Button();
             this.flpSongs = new System.Windows.Forms.FlowLayoutPanel();
@@ -39,26 +37,6 @@
             this.wmpPreview = new AxWMPLib.AxWindowsMediaPlayer();
             ((System.ComponentModel.ISupportInitialize)(this.wmpPreview)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lstSongs
-            // 
-            this.lstSongs.FormattingEnabled = true;
-            this.lstSongs.Location = new System.Drawing.Point(628, -16);
-            this.lstSongs.Name = "lstSongs";
-            this.lstSongs.Size = new System.Drawing.Size(239, 186);
-            this.lstSongs.TabIndex = 0;
-            this.lstSongs.Visible = false;
-            // 
-            // btnRemoveSong
-            // 
-            this.btnRemoveSong.Location = new System.Drawing.Point(685, 25);
-            this.btnRemoveSong.Name = "btnRemoveSong";
-            this.btnRemoveSong.Size = new System.Drawing.Size(115, 23);
-            this.btnRemoveSong.TabIndex = 1;
-            this.btnRemoveSong.Text = "Remove Song";
-            this.btnRemoveSong.UseVisualStyleBackColor = true;
-            this.btnRemoveSong.Visible = false;
-            this.btnRemoveSong.Click += new System.EventHandler(this.btnRemoveSong_Click);
             // 
             // cboSongs
             // 
@@ -132,8 +110,6 @@
             this.Controls.Add(this.flpSongs);
             this.Controls.Add(this.btnAddSong);
             this.Controls.Add(this.cboSongs);
-            this.Controls.Add(this.btnRemoveSong);
-            this.Controls.Add(this.lstSongs);
             this.Name = "FrmModifyPlaylist";
             this.Text = "FrmModifyPlaylist";
             ((System.ComponentModel.ISupportInitialize)(this.wmpPreview)).EndInit();
@@ -143,9 +119,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lstSongs;
-        private System.Windows.Forms.Button btnRemoveSong;
         private System.Windows.Forms.ComboBox cboSongs;
         private System.Windows.Forms.Button btnAddSong;
         private System.Windows.Forms.FlowLayoutPanel flpSongs;

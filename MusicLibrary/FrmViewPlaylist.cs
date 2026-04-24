@@ -119,54 +119,6 @@ namespace MusicLibrary
         }
 
 
-        private void RenamePlaylist(int playlistID)
-        {
-
-            string newName = txtPlaylistName.Text;
-
-            if (newName == "")
-            {
-                MessageBox.Show("Enter the new playlist name in the textbox first.");
-                return;
-            }
-
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\MusicLibrary.accdb";
-
-            OleDbConnection myConnection = new OleDbConnection(connectionString);
-
-            try
-            {
-                myConnection.Open();
-
-                string sql = "UPDATE Playlist SET PlaylistName = ? WHERE PlaylistID = ?";
-
-                OleDbCommand cmd = new OleDbCommand(sql, myConnection);
-                cmd.Parameters.AddWithValue("@name", newName);
-                cmd.Parameters.AddWithValue("@id", playlistID);
-
-                cmd.ExecuteNonQuery();
-
-                myConnection.Close();
-
-                LoadPlaylists();
-                txtPlaylistName.Clear();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error updating playlist: " + ex.Message);
-            }
-        }
-
-
-
-
-
-
-        private void btnLoadPlaylists_Click(object sender, EventArgs e)
-        {
-            LoadPlaylists();
-
-        }
 
         private void btnAddPlaylist_Click(object sender, EventArgs e)
         {

@@ -77,5 +77,77 @@ namespace MusicLibrary
 
             return genres;
         }
+
+        // Method for retrieving the Reviews + Ratings from database
+        public (string review, int rating) GetReviewBySongID(int songID)
+        {
+            using (OleDbConnection conn = new OleDbConnection(connStr))
+            {
+                conn.Open();
+
+                OleDbCommand cmd = new OleDbCommand(
+                    "SELECT ReviewText, RatingValue FROM Reviews WHERE SongID = ?", conn);
+
+                cmd.Parameters.AddWithValue("?", songID);
+
+                OleDbDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    string review = reader["ReviewText"].ToString();
+                    int rating = Convert.ToInt32(reader["RatingValue"]);
+
+                    return (review, rating);
+                }
+            }
+            return ("", 0);
+        }
+
+        // Method for saving a review (updating an existing one or creating a new one)
+        public void SaveReview(int songID, int userID, string reviewText, int rating)
+        {
+            using (OleDbConnection conn = new OleDbConnection(connStr))
+            {
+                conn.Open();
+
+                // Checking if a review already exists for the song
+                OleDbCommand check = new OleDbCommand(
+                    "SELECT COUNT(*) FROM Reviews WHERE SongID = ?", conn);
+
+                check.Parameters.AddWithValue("?", songID);
+
+                int exists = Convert.ToInt32(check.ExecuteScalar());
+
+                // Inserts new review for song if it doesn't exist yet
+                if (exists == 0)
+                {
+                    OleDbCommand insert = new OleDbCommand(
+                        "INSERT INTO Reviews (SongID, UserID, RatingValue, ReviewText, ReviewDate) " +
+                        "VALUES (?, ?, ?, ?, ?)", conn);
+
+                    insert.Parameters.AddWithValue("?", songID);
+                    insert.Parameters.AddWithValue("?", userID);
+                    insert.Parameters.AddWithValue("?", rating);
+                    insert.Parameters.AddWithValue("?", reviewText);
+                    insert.Parameters.AddWithValue("?", DateTime.Now);
+
+                    insert.ExecuteNonQuery();
+                }
+                else
+                {
+                    // Updates review if it does exist
+                    OleDbCommand update = new OleDbCommand(
+                        "UPDATE Reviews SET RatingValue = ?, ReviewText = ?, ReviewDate = ? " +
+                        "WHERE SongID = ?", conn);
+
+                    update.Parameters.AddWithValue("?", rating);
+                    update.Parameters.AddWithValue("?", reviewText);
+                    update.Parameters.AddWithValue("?", DateTime.Now);
+                    update.Parameters.AddWithValue("?", songID);
+
+                    update.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

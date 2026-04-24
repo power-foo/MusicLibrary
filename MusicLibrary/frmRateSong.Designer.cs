@@ -41,6 +41,7 @@
             this.lblRating = new System.Windows.Forms.Label();
             this.lblReview = new System.Windows.Forms.Label();
             this.txtReview = new System.Windows.Forms.TextBox();
+            this.btnSortRatings = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReviews)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRating)).BeginInit();
             this.SuspendLayout();
@@ -95,7 +96,7 @@
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnClose.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.Navy;
-            this.btnClose.Location = new System.Drawing.Point(693, 456);
+            this.btnClose.Location = new System.Drawing.Point(774, 456);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(125, 81);
             this.btnClose.TabIndex = 35;
@@ -187,12 +188,26 @@
             this.txtReview.Size = new System.Drawing.Size(382, 22);
             this.txtReview.TabIndex = 43;
             // 
+            // btnSortRatings
+            // 
+            this.btnSortRatings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnSortRatings.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSortRatings.ForeColor = System.Drawing.Color.Navy;
+            this.btnSortRatings.Location = new System.Drawing.Point(607, 456);
+            this.btnSortRatings.Name = "btnSortRatings";
+            this.btnSortRatings.Size = new System.Drawing.Size(125, 81);
+            this.btnSortRatings.TabIndex = 44;
+            this.btnSortRatings.Text = "Sort by Highest Rating";
+            this.btnSortRatings.UseVisualStyleBackColor = false;
+            this.btnSortRatings.Click += new System.EventHandler(this.btnSortRatings_Click);
+            // 
             // frmRateSong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(957, 549);
+            this.Controls.Add(this.btnSortRatings);
             this.Controls.Add(this.txtReview);
             this.Controls.Add(this.lblReview);
             this.Controls.Add(this.lblRating);
@@ -231,5 +246,6 @@
         private System.Windows.Forms.Label lblRating;
         private System.Windows.Forms.Label lblReview;
         private System.Windows.Forms.TextBox txtReview;
+        private System.Windows.Forms.Button btnSortRatings;
     }
 }

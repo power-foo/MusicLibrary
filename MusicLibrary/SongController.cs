@@ -137,11 +137,11 @@ namespace MusicLibrary
                     "INSERT INTO Reviews (SongID, UserID, RatingValue, ReviewText, ReviewDate) " +
                     "VALUES (?, ?, ?, ?, ?)", conn);
 
-                insert.Parameters.AddWithValue("?", songID);
-                insert.Parameters.AddWithValue("?", userID);
-                insert.Parameters.AddWithValue("?", rating);
-                insert.Parameters.AddWithValue("?", reviewText);
-                insert.Parameters.AddWithValue("?", DateTime.Now);
+                insert.Parameters.Add("?", OleDbType.Integer).Value = songID;
+                insert.Parameters.Add("?", OleDbType.Integer).Value = userID;
+                insert.Parameters.Add("?", OleDbType.Integer).Value = rating;
+                insert.Parameters.Add("?", OleDbType.VarChar).Value = reviewText;
+                insert.Parameters.Add("?", OleDbType.Date).Value = DateTime.Now;
 
                 insert.ExecuteNonQuery();
             }

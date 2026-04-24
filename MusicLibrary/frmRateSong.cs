@@ -57,6 +57,12 @@ namespace MusicLibrary
             dgvReviews.Columns["ReviewID"].Visible = false;
             dgvReviews.Columns["SongID"].Visible = false;
             dgvReviews.Columns["UserID"].Visible = false;
+
+            // Setting the Song Name to be the first displayed index
+            dgvReviews.Columns["SongName"].DisplayIndex = 0;
+
+            // Setting the Review Text column to be bigger for better readability
+            dgvReviews.Columns["ReviewText"].Width = 300;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -87,6 +93,22 @@ namespace MusicLibrary
 
             MessageBox.Show("Review deleted.");
             LoadReviews();
+        }
+
+        private void btnSortRatings_Click(object sender, EventArgs e)
+        {
+            // Sorts the reviews in the DGV by their Rating Value from highest to lowest
+            List<Review> reviews = controller.GetAllReviews();
+
+            foreach (var review in reviews)
+            {
+                review.SongName = controller.GetSongNameByID(review.SongID);
+            }
+
+            // Sorting the reviews by their Rating Values from highest to lowest
+            reviews = reviews.OrderByDescending(r => r.RatingValue).ToList();
+
+            dgvReviews.DataSource = reviews;
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Data.OleDb;
 
 namespace MusicLibrary
 {
+    // Tri Le
     public class VerifyUser
     {
         private String connectionString = "provider=Microsoft.ACE.OLEDB.12.0;Data Source=MusicLibrary.accdb";

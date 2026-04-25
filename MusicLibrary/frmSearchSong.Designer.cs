@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.flpSongs = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSort = new System.Windows.Forms.Button();
-            this.picSelectedAlbum = new System.Windows.Forms.PictureBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.cmbSort = new System.Windows.Forms.ComboBox();
@@ -43,8 +42,9 @@
             this.chtGenres = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblCaption = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.picSelectedAlbum)).BeginInit();
+            this.picSelectedAlbum = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.chtGenres)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSelectedAlbum)).BeginInit();
             this.SuspendLayout();
             // 
             // flpSongs
@@ -60,6 +60,7 @@
             // btnSort
             // 
             this.btnSort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnSort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSort.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSort.ForeColor = System.Drawing.Color.Navy;
             this.btnSort.Location = new System.Drawing.Point(12, 431);
@@ -70,18 +71,10 @@
             this.btnSort.UseVisualStyleBackColor = false;
             this.btnSort.Click += new System.EventHandler(this.btnSort_Click);
             // 
-            // picSelectedAlbum
-            // 
-            this.picSelectedAlbum.Location = new System.Drawing.Point(676, 130);
-            this.picSelectedAlbum.Name = "picSelectedAlbum";
-            this.picSelectedAlbum.Size = new System.Drawing.Size(269, 195);
-            this.picSelectedAlbum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSelectedAlbum.TabIndex = 24;
-            this.picSelectedAlbum.TabStop = false;
-            // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.Navy;
             this.btnSearch.Location = new System.Drawing.Point(181, 431);
@@ -95,6 +88,7 @@
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.Navy;
             this.btnClose.Location = new System.Drawing.Point(350, 431);
@@ -146,19 +140,19 @@
             // chtGenres
             // 
             this.chtGenres.BackColor = System.Drawing.Color.Transparent;
-            chartArea6.Name = "ChartArea1";
-            this.chtGenres.ChartAreas.Add(chartArea6);
-            legend6.Enabled = false;
-            legend6.Name = "Legend1";
-            this.chtGenres.Legends.Add(legend6);
+            chartArea2.Name = "ChartArea1";
+            this.chtGenres.ChartAreas.Add(chartArea2);
+            legend2.Enabled = false;
+            legend2.Name = "Legend1";
+            this.chtGenres.Legends.Add(legend2);
             this.chtGenres.Location = new System.Drawing.Point(519, 342);
             this.chtGenres.Name = "chtGenres";
             this.chtGenres.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chtGenres.Series.Add(series6);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chtGenres.Series.Add(series2);
             this.chtGenres.Size = new System.Drawing.Size(426, 195);
             this.chtGenres.TabIndex = 31;
             this.chtGenres.Text = "Song Genres";
@@ -185,6 +179,15 @@
             this.lblCaption.Text = "Browse through our collection of songs. Click any song to preview its album cover" +
     "! You may also sort or search by criteria.";
             // 
+            // picSelectedAlbum
+            // 
+            this.picSelectedAlbum.Location = new System.Drawing.Point(676, 130);
+            this.picSelectedAlbum.Name = "picSelectedAlbum";
+            this.picSelectedAlbum.Size = new System.Drawing.Size(269, 195);
+            this.picSelectedAlbum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSelectedAlbum.TabIndex = 24;
+            this.picSelectedAlbum.TabStop = false;
+            // 
             // frmSearchSong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -206,8 +209,8 @@
             this.Name = "frmSearchSong";
             this.Text = "Music Library - Display Songs";
             this.Load += new System.EventHandler(this.frmSearchSong_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picSelectedAlbum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtGenres)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSelectedAlbum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

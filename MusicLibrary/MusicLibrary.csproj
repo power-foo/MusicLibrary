@@ -96,6 +96,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MusicLibraryDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Playlist.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Review.cs" />

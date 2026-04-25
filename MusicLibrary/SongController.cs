@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MusicLibrary
 {
-    // Tri Le
+    // Tri Le and Chris
     public class SongController
     {
         // Connection string to database

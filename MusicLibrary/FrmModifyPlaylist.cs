@@ -38,6 +38,7 @@ namespace MusicLibrary
             {
                 myConnection.Open();
 
+                //Gets all the songs that belogns in the playlist
                 string sql = "SELECT Songs.SongID, SongName, Artist, AlbumCover, PreviewURL FROM Songs INNER JOIN PlaylistSong ON Songs.SongID = PlaylistSong.SongID WHERE PlaylistID = ?";
 
                 OleDbCommand cmd = new OleDbCommand(sql, myConnection);
@@ -47,12 +48,14 @@ namespace MusicLibrary
 
                 while (reader.Read())
                 {
+                    //Creates one card for one song
                     Panel songPanel = new Panel();
                     songPanel.Width = 350;
                     songPanel.Height = 120;
                     songPanel.BorderStyle = BorderStyle.FixedSingle;
                     songPanel.Margin = new Padding(10);
 
+                    //Creates the album picture
                     PictureBox picAlbum = new PictureBox();
                     picAlbum.Width = 90;
                     picAlbum.Height = 90;
@@ -61,6 +64,7 @@ namespace MusicLibrary
 
                     try
                     {
+                        //Loads the image from the database URL
                         picAlbum.LoadAsync(reader["AlbumCover"].ToString());
                     }
                     catch
@@ -68,17 +72,20 @@ namespace MusicLibrary
                         picAlbum.BackColor = Color.LightGray;
                     }
 
+                    //Shows the song name
                     Label lblSong = new Label();
                     lblSong.Text = reader["SongName"].ToString();
                     lblSong.Location = new Point(115, 15);
                     lblSong.Width = 200;
                     lblSong.Font = new Font("Arial", 11, FontStyle.Bold);
 
+                    //Shows the artist name
                     Label lblArtist = new Label();
                     lblArtist.Text = reader["Artist"].ToString();
                     lblArtist.Location = new Point(115, 45);
                     lblArtist.Width = 200;
 
+                    //Remove button
                     Button btnRemove = new Button();
                     btnRemove.Text = "Remove";
                     btnRemove.Location = new Point(115, 75);
@@ -86,6 +93,7 @@ namespace MusicLibrary
                     btnRemove.BackColor = Color.FromArgb(128, 255, 255);
                     btnRemove.FlatStyle = FlatStyle.Flat;
 
+                    //Preview button
                     Button btnPreview = new Button();
                     btnPreview.Text = "Preview";
                     btnPreview.Location = new Point(210, 75);
@@ -93,6 +101,7 @@ namespace MusicLibrary
                     btnPreview.BackColor = Color.FromArgb(128, 255, 255);
                     btnPreview.FlatStyle = FlatStyle.Flat;
 
+                    //Gets the preview link from database which would be the itunes link
                     string previewURL = reader["PreviewURL"].ToString();
 
                     btnPreview.Click += (s, e) =>
@@ -103,6 +112,7 @@ namespace MusicLibrary
 
                     int songID = Convert.ToInt32(reader["SongID"]);
 
+                    //Removes the song when you click remoive
                     btnRemove.Click += (s, e) =>
                     {
                         RemoveSongByID(songID);
@@ -126,6 +136,7 @@ namespace MusicLibrary
         }
         private void RemoveSongByID(int songID)
         {
+            //Removes the song from playlist from its songID
             string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\MusicLibrary.accdb";
 
             OleDbConnection myConnection = new OleDbConnection(connectionString);
@@ -154,6 +165,7 @@ namespace MusicLibrary
 
         private void LoadAllSongs()
         {
+            //It clears the dropdown
             cboSongs.Items.Clear();
 
             string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\MusicLibrary.accdb";
@@ -162,6 +174,7 @@ namespace MusicLibrary
 
             try
             {
+                //Gets all the songs from the Songs table
                 myConnection.Open();
 
                 string sql = "SELECT SongName FROM Songs";
@@ -172,6 +185,7 @@ namespace MusicLibrary
 
                 while (reader.Read())
                 {
+                    //Adds the songs in the dropdown
                     cboSongs.Items.Add(reader["SongName"].ToString());
                 }
 
@@ -185,6 +199,7 @@ namespace MusicLibrary
 
         private void AddSong(string songName)
         {
+            //Adds the selected song into the playlist
             string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\MusicLibrary.accdb";
 
             OleDbConnection myConnection = new OleDbConnection(connectionString);
@@ -193,6 +208,7 @@ namespace MusicLibrary
             {
                 myConnection.Open();
 
+                //Finds through SongID by SongName and then from there adds it into PlaylistSong
                 string sql = "INSERT INTO PlaylistSong (PlaylistID, SongID) SELECT ?, SongID FROM Songs WHERE SongName = ?";
 
                 OleDbCommand cmd = new OleDbCommand(sql, myConnection);
@@ -226,6 +242,7 @@ namespace MusicLibrary
 
         private void btnStopPreview_Click(object sender, EventArgs e)
         {
+            //Stops the music preview by clearning the preview link
             wmpPreview.Ctlcontrols.stop();
             wmpPreview.URL = "";
         }

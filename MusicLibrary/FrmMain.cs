@@ -15,7 +15,7 @@ namespace MusicLibrary
         public FrmMain(string username)
         {
             InitializeComponent();
-            lblWelcome.Text = "Welcome, " + username;
+            lblWelcome.Text = "Welcome, " + username; //Shows username when you login
 
             LoadMainButtons();
         }
@@ -23,6 +23,7 @@ namespace MusicLibrary
         {
             flpMainButtons.Controls.Clear();
 
+            //Adding buttons into the flp
             CreateMainButton("View Playlist", ViewPlaylist_Click);
             CreateMainButton("Search Songs", SearchSongs_Click);
             CreateMainButton("Rate Songs", RateSongs_Click);
@@ -44,18 +45,22 @@ namespace MusicLibrary
 
             flpMainButtons.Controls.Add(btn);
         }
+        
+        //Open playlist
         private void ViewPlaylist_Click(object sender, EventArgs e)
         {
             FrmViewPlaylist frm = new FrmViewPlaylist();
             frm.ShowDialog();
         }
 
+        //Open Search songs
         private void SearchSongs_Click(object sender, EventArgs e)
         {
             frmSearchSong frm = new frmSearchSong();
             frm.ShowDialog();
         }
 
+        //Open Rate songs
         private void RateSongs_Click(object sender, EventArgs e)
         {
             frmRateSong frm = new frmRateSong();

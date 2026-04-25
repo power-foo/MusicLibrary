@@ -21,7 +21,7 @@ namespace MusicLibrary
 
         private void LoadPlaylists()
         {
-            flpPlaylists.Controls.Clear();
+            flpPlaylists.Controls.Clear(); //Clears the playlist when reloading
 
             string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\MusicLibrary.accdb";
 
@@ -31,7 +31,7 @@ namespace MusicLibrary
             {
                 myConnection.Open();
 
-                string sql = "SELECT * FROM Playlist";
+                string sql = "SELECT * FROM Playlist"; //Getting all the playlists in the database
 
                 OleDbCommand myCommand = new OleDbCommand(sql, myConnection);
 
@@ -39,18 +39,21 @@ namespace MusicLibrary
 
                 while (reader.Read())
                 {
+                    //Creates the playlist card
                     Panel playlistPanel = new Panel();
                     playlistPanel.Width = 300;
                     playlistPanel.Height = 100;
                     playlistPanel.BorderStyle = BorderStyle.FixedSingle;
                     playlistPanel.Margin = new Padding(10);
 
+                    //Shows the playlist's name
                     Label lblPlaylistName = new Label();
                     lblPlaylistName.Text = reader["PlaylistName"].ToString();
                     lblPlaylistName.Location = new Point(10, 10);
                     lblPlaylistName.Width = 250;
                     lblPlaylistName.Font = new Font("Arial", 12, FontStyle.Bold);
 
+                    //Creates the open playlist button
                     Button btnView = new Button();
                     btnView.Text = "Open";
                     btnView.Location = new Point(10, 50);
@@ -59,9 +62,9 @@ namespace MusicLibrary
                     btnView.FlatStyle = FlatStyle.Flat;
 
                     int playlistID = Convert.ToInt32(reader["PlaylistID"]);
-
                     string playlistName = reader["PlaylistName"].ToString();
 
+                    //Thjis is open the modify playlist form when you click
                     btnView.Click += (s, e) =>
                     {
                         FrmModifyPlaylist frm = new FrmModifyPlaylist(playlistID, playlistName);
@@ -74,16 +77,17 @@ namespace MusicLibrary
                     btnDelete.Width = 80;
                     btnDelete.BackColor = Color.FromArgb(128, 255, 255);
                     btnDelete.FlatStyle = FlatStyle.Flat;
-
+                    //Deletes the playlist
                     btnDelete.Click += (s, e) =>
                     {
                         DeletePlaylist(playlistID);
                     };
 
+                    //Will add the playlist add
                     playlistPanel.Controls.Add(lblPlaylistName);
                     playlistPanel.Controls.Add(btnView);
                     playlistPanel.Controls.Add(btnDelete);
-
+                    //Adds the card into the flp
                     flpPlaylists.Controls.Add(playlistPanel);
                 }
 
@@ -145,6 +149,7 @@ namespace MusicLibrary
             {
                 myConnection.Open();
 
+                //Adds the new playlist into the database
                 sql = "INSERT INTO Playlist (PlaylistName, UserID) VALUES (?, ?)";
                 myCommand = new OleDbCommand(sql, myConnection);
 
@@ -173,18 +178,22 @@ namespace MusicLibrary
 
         private void btnGeneratePlaylist_Click(object sender, EventArgs e)
         {
+
+            //Make sure the user enters a playlist name 
             if (txtPlaylistName.Text == "")
             {
                 MessageBox.Show("Enter a playlist name first.");
                 return;
             }
 
+            //User must pick a genre to be able to generate a playlist
             if (cboGenre.SelectedItem == null)
             {
                 MessageBox.Show("Select a genre first.");
                 return;
             }
 
+            //Creates the playlist
             GeneratePlaylist(txtPlaylistName.Text, cboGenre.SelectedItem.ToString());
         }
         private void GeneratePlaylist(string playlistName, string genre)
@@ -196,17 +205,19 @@ namespace MusicLibrary
             try
             {
                 myConnection.Open();
-
+                //This will create the playlist
                 string insertPlaylistSql = "INSERT INTO Playlist (PlaylistName, UserID) VALUES (?, ?)";
                 OleDbCommand playlistCmd = new OleDbCommand(insertPlaylistSql, myConnection);
                 playlistCmd.Parameters.AddWithValue("?", playlistName);
                 playlistCmd.Parameters.AddWithValue("?", 1);
                 playlistCmd.ExecuteNonQuery();
 
+                //This will get the ID of the new playlist it has made
                 string getPlaylistSql = "SELECT @@IDENTITY";
                 OleDbCommand getPlaylistCmd = new OleDbCommand(getPlaylistSql, myConnection);
                 int newPlaylistID = Convert.ToInt32(getPlaylistCmd.ExecuteScalar());
 
+                //It will find songs that matches the genre
                 string getSongsSql = "SELECT SongID FROM Songs WHERE Genre = ?";
                 OleDbCommand songCmd = new OleDbCommand(getSongsSql, myConnection);
                 songCmd.Parameters.AddWithValue("?", genre);
@@ -219,6 +230,7 @@ namespace MusicLibrary
                 {
                     int songID = Convert.ToInt32(reader["SongID"]);
 
+                    //Then it will match the song into the playlist
                     string insertSongSql = "INSERT INTO PlaylistSong (PlaylistID, SongID) VALUES (?, ?)";
                     OleDbCommand insertSongCmd = new OleDbCommand(insertSongSql, myConnection);
                     insertSongCmd.Parameters.AddWithValue("?", newPlaylistID);
@@ -232,6 +244,7 @@ namespace MusicLibrary
 
                 MessageBox.Show("Playlist generated with " + songsAdded + " songs.");
 
+                //Reload the playlist for the new playlist
                 txtPlaylistName.Clear();
                 cboGenre.SelectedIndex = -1;
                 LoadPlaylists();

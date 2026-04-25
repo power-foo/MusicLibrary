@@ -42,8 +42,12 @@
             this.lblReview = new System.Windows.Forms.Label();
             this.txtReview = new System.Windows.Forms.TextBox();
             this.btnSortRatings = new System.Windows.Forms.Button();
+            this.picMusicLeft = new System.Windows.Forms.PictureBox();
+            this.picMusicRight = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReviews)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRating)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMusicLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMusicRight)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvReviews
@@ -201,9 +205,29 @@
             this.btnSortRatings.Name = "btnSortRatings";
             this.btnSortRatings.Size = new System.Drawing.Size(125, 81);
             this.btnSortRatings.TabIndex = 44;
-            this.btnSortRatings.Text = "Sort by Highest Rating";
+            this.btnSortRatings.Text = "Sort by Rating";
             this.btnSortRatings.UseVisualStyleBackColor = false;
             this.btnSortRatings.Click += new System.EventHandler(this.btnSortRatings_Click);
+            // 
+            // picMusicLeft
+            // 
+            this.picMusicLeft.Image = global::MusicLibrary.Properties.Resources.music_symbol_transparent;
+            this.picMusicLeft.Location = new System.Drawing.Point(106, 7);
+            this.picMusicLeft.Name = "picMusicLeft";
+            this.picMusicLeft.Size = new System.Drawing.Size(60, 48);
+            this.picMusicLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMusicLeft.TabIndex = 45;
+            this.picMusicLeft.TabStop = false;
+            // 
+            // picMusicRight
+            // 
+            this.picMusicRight.Image = global::MusicLibrary.Properties.Resources.music_symbol_transparent;
+            this.picMusicRight.Location = new System.Drawing.Point(379, 7);
+            this.picMusicRight.Name = "picMusicRight";
+            this.picMusicRight.Size = new System.Drawing.Size(60, 48);
+            this.picMusicRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMusicRight.TabIndex = 46;
+            this.picMusicRight.TabStop = false;
             // 
             // frmRateSong
             // 
@@ -211,6 +235,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(957, 549);
+            this.Controls.Add(this.picMusicRight);
+            this.Controls.Add(this.picMusicLeft);
             this.Controls.Add(this.btnSortRatings);
             this.Controls.Add(this.txtReview);
             this.Controls.Add(this.lblReview);
@@ -230,6 +256,8 @@
             this.Load += new System.EventHandler(this.frmRateSong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReviews)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRating)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMusicLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMusicRight)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,5 +279,7 @@
         private System.Windows.Forms.Label lblReview;
         private System.Windows.Forms.TextBox txtReview;
         private System.Windows.Forms.Button btnSortRatings;
+        private System.Windows.Forms.PictureBox picMusicLeft;
+        private System.Windows.Forms.PictureBox picMusicRight;
     }
 }

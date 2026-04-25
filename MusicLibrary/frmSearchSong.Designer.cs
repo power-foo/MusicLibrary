@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.flpSongs = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSort = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -43,8 +43,12 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblCaption = new System.Windows.Forms.Label();
             this.picSelectedAlbum = new System.Windows.Forms.PictureBox();
+            this.picMusicLeft = new System.Windows.Forms.PictureBox();
+            this.picMusicRight = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.chtGenres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSelectedAlbum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMusicLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMusicRight)).BeginInit();
             this.SuspendLayout();
             // 
             // flpSongs
@@ -140,19 +144,19 @@
             // chtGenres
             // 
             this.chtGenres.BackColor = System.Drawing.Color.Transparent;
-            chartArea2.Name = "ChartArea1";
-            this.chtGenres.ChartAreas.Add(chartArea2);
-            legend2.Enabled = false;
-            legend2.Name = "Legend1";
-            this.chtGenres.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chtGenres.ChartAreas.Add(chartArea1);
+            legend1.Enabled = false;
+            legend1.Name = "Legend1";
+            this.chtGenres.Legends.Add(legend1);
             this.chtGenres.Location = new System.Drawing.Point(519, 342);
             this.chtGenres.Name = "chtGenres";
             this.chtGenres.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chtGenres.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chtGenres.Series.Add(series1);
             this.chtGenres.Size = new System.Drawing.Size(426, 195);
             this.chtGenres.TabIndex = 31;
             this.chtGenres.Text = "Song Genres";
@@ -188,12 +192,34 @@
             this.picSelectedAlbum.TabIndex = 24;
             this.picSelectedAlbum.TabStop = false;
             // 
+            // picMusicLeft
+            // 
+            this.picMusicLeft.Image = global::MusicLibrary.Properties.Resources.music_symbol_transparent;
+            this.picMusicLeft.Location = new System.Drawing.Point(666, 12);
+            this.picMusicLeft.Name = "picMusicLeft";
+            this.picMusicLeft.Size = new System.Drawing.Size(41, 36);
+            this.picMusicLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMusicLeft.TabIndex = 34;
+            this.picMusicLeft.TabStop = false;
+            // 
+            // picMusicRight
+            // 
+            this.picMusicRight.Image = global::MusicLibrary.Properties.Resources.music_symbol_transparent;
+            this.picMusicRight.Location = new System.Drawing.Point(910, 12);
+            this.picMusicRight.Name = "picMusicRight";
+            this.picMusicRight.Size = new System.Drawing.Size(41, 36);
+            this.picMusicRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMusicRight.TabIndex = 35;
+            this.picMusicRight.TabStop = false;
+            // 
             // frmSearchSong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(957, 549);
+            this.Controls.Add(this.picMusicRight);
+            this.Controls.Add(this.picMusicLeft);
             this.Controls.Add(this.lblCaption);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.chtGenres);
@@ -211,6 +237,8 @@
             this.Load += new System.EventHandler(this.frmSearchSong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chtGenres)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSelectedAlbum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMusicLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMusicRight)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,5 +258,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chtGenres;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblCaption;
+        private System.Windows.Forms.PictureBox picMusicLeft;
+        private System.Windows.Forms.PictureBox picMusicRight;
     }
 }

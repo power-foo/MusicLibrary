@@ -38,6 +38,10 @@
             this.lblLoginCaption = new System.Windows.Forms.Label();
             this.lblLoginTitle = new System.Windows.Forms.Label();
             this.lblHint = new System.Windows.Forms.Label();
+            this.picMusicLeft = new System.Windows.Forms.PictureBox();
+            this.picMusicRight = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picMusicLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMusicRight)).BeginInit();
             this.SuspendLayout();
             // 
             // lblRegisterPrompt
@@ -135,7 +139,7 @@
             this.lblLoginTitle.AutoSize = true;
             this.lblLoginTitle.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoginTitle.ForeColor = System.Drawing.Color.Navy;
-            this.lblLoginTitle.Location = new System.Drawing.Point(100, 30);
+            this.lblLoginTitle.Location = new System.Drawing.Point(95, 30);
             this.lblLoginTitle.Name = "lblLoginTitle";
             this.lblLoginTitle.Size = new System.Drawing.Size(383, 33);
             this.lblLoginTitle.TabIndex = 9;
@@ -152,12 +156,34 @@
             this.lblHint.TabIndex = 18;
             this.lblHint.Text = "Hint: For easier testing, User=christolis, PW=gobirds";
             // 
+            // picMusicLeft
+            // 
+            this.picMusicLeft.Image = global::MusicLibrary.Properties.Resources.music_symbol_transparent;
+            this.picMusicLeft.Location = new System.Drawing.Point(12, 12);
+            this.picMusicLeft.Name = "picMusicLeft";
+            this.picMusicLeft.Size = new System.Drawing.Size(78, 71);
+            this.picMusicLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMusicLeft.TabIndex = 19;
+            this.picMusicLeft.TabStop = false;
+            // 
+            // picMusicRight
+            // 
+            this.picMusicRight.Image = global::MusicLibrary.Properties.Resources.music_symbol_transparent;
+            this.picMusicRight.Location = new System.Drawing.Point(498, 16);
+            this.picMusicRight.Name = "picMusicRight";
+            this.picMusicRight.Size = new System.Drawing.Size(78, 71);
+            this.picMusicRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMusicRight.TabIndex = 20;
+            this.picMusicRight.TabStop = false;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(582, 328);
+            this.Controls.Add(this.picMusicRight);
+            this.Controls.Add(this.picMusicLeft);
             this.Controls.Add(this.lblHint);
             this.Controls.Add(this.lblRegisterPrompt);
             this.Controls.Add(this.btnExit);
@@ -170,6 +196,8 @@
             this.Controls.Add(this.lblLoginTitle);
             this.Name = "frmLogin";
             this.Text = "Music Library - Log In";
+            ((System.ComponentModel.ISupportInitialize)(this.picMusicLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMusicRight)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,6 +215,8 @@
         private System.Windows.Forms.Label lblLoginCaption;
         private System.Windows.Forms.Label lblLoginTitle;
         private System.Windows.Forms.Label lblHint;
+        private System.Windows.Forms.PictureBox picMusicLeft;
+        private System.Windows.Forms.PictureBox picMusicRight;
     }
 }
 

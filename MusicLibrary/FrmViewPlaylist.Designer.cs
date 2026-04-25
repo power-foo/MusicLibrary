@@ -34,6 +34,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
+            this.cboGenre = new System.Windows.Forms.ComboBox();
+            this.btnGeneratePlaylist = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtPlaylistName
@@ -77,11 +79,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 74);
+            this.label2.Location = new System.Drawing.Point(8, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 20);
+            this.label2.Size = new System.Drawing.Size(55, 20);
             this.label2.TabIndex = 6;
-            this.label2.Text = "New:";
+            this.label2.Text = "Name:";
             // 
             // btnBack
             // 
@@ -95,12 +97,40 @@
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // cboGenre
+            // 
+            this.cboGenre.FormattingEnabled = true;
+            this.cboGenre.Items.AddRange(new object[] {
+            "Hip Hop",
+            "Rock",
+            "Pop",
+            "Alternative",
+            "R&B"});
+            this.cboGenre.Location = new System.Drawing.Point(500, 71);
+            this.cboGenre.Name = "cboGenre";
+            this.cboGenre.Size = new System.Drawing.Size(146, 21);
+            this.cboGenre.TabIndex = 8;
+            // 
+            // btnGeneratePlaylist
+            // 
+            this.btnGeneratePlaylist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnGeneratePlaylist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGeneratePlaylist.Location = new System.Drawing.Point(652, 71);
+            this.btnGeneratePlaylist.Name = "btnGeneratePlaylist";
+            this.btnGeneratePlaylist.Size = new System.Drawing.Size(119, 23);
+            this.btnGeneratePlaylist.TabIndex = 9;
+            this.btnGeneratePlaylist.Text = "Generate a Playlist";
+            this.btnGeneratePlaylist.UseVisualStyleBackColor = false;
+            this.btnGeneratePlaylist.Click += new System.EventHandler(this.btnGeneratePlaylist_Click);
+            // 
             // FrmViewPlaylist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnGeneratePlaylist);
+            this.Controls.Add(this.cboGenre);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -121,5 +151,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.ComboBox cboGenre;
+        private System.Windows.Forms.Button btnGeneratePlaylist;
     }
 }

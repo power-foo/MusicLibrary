@@ -170,5 +170,76 @@ namespace MusicLibrary
         {
             this.Close();
         }
+
+        private void btnGeneratePlaylist_Click(object sender, EventArgs e)
+        {
+            if (txtPlaylistName.Text == "")
+            {
+                MessageBox.Show("Enter a playlist name first.");
+                return;
+            }
+
+            if (cboGenre.SelectedItem == null)
+            {
+                MessageBox.Show("Select a genre first.");
+                return;
+            }
+
+            GeneratePlaylist(txtPlaylistName.Text, cboGenre.SelectedItem.ToString());
+        }
+        private void GeneratePlaylist(string playlistName, string genre)
+        {
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\MusicLibrary.accdb";
+
+            OleDbConnection myConnection = new OleDbConnection(connectionString);
+
+            try
+            {
+                myConnection.Open();
+
+                string insertPlaylistSql = "INSERT INTO Playlist (PlaylistName, UserID) VALUES (?, ?)";
+                OleDbCommand playlistCmd = new OleDbCommand(insertPlaylistSql, myConnection);
+                playlistCmd.Parameters.AddWithValue("?", playlistName);
+                playlistCmd.Parameters.AddWithValue("?", 1);
+                playlistCmd.ExecuteNonQuery();
+
+                string getPlaylistSql = "SELECT @@IDENTITY";
+                OleDbCommand getPlaylistCmd = new OleDbCommand(getPlaylistSql, myConnection);
+                int newPlaylistID = Convert.ToInt32(getPlaylistCmd.ExecuteScalar());
+
+                string getSongsSql = "SELECT SongID FROM Songs WHERE Genre = ?";
+                OleDbCommand songCmd = new OleDbCommand(getSongsSql, myConnection);
+                songCmd.Parameters.AddWithValue("?", genre);
+
+                OleDbDataReader reader = songCmd.ExecuteReader();
+
+                int songsAdded = 0;
+
+                while (reader.Read())
+                {
+                    int songID = Convert.ToInt32(reader["SongID"]);
+
+                    string insertSongSql = "INSERT INTO PlaylistSong (PlaylistID, SongID) VALUES (?, ?)";
+                    OleDbCommand insertSongCmd = new OleDbCommand(insertSongSql, myConnection);
+                    insertSongCmd.Parameters.AddWithValue("?", newPlaylistID);
+                    insertSongCmd.Parameters.AddWithValue("?", songID);
+                    insertSongCmd.ExecuteNonQuery();
+
+                    songsAdded++;
+                }
+
+                myConnection.Close();
+
+                MessageBox.Show("Playlist generated with " + songsAdded + " songs.");
+
+                txtPlaylistName.Clear();
+                cboGenre.SelectedIndex = -1;
+                LoadPlaylists();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error generating playlist: " + ex.Message);
+            }
+        }
     }
 }
